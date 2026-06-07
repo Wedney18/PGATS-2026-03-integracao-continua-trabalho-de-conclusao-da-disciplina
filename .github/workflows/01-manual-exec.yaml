@@ -1,45 +1,102 @@
+# Nome que aparecerá na aba Actions do GitHub
 name: Execução Manual
 
-on:
-  workflow_dispatch:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+# Define as permissões mínimas que o workflow terá
+permissions:
+  contents: read
 
+# Eventos que disparam a execução da pipeline
+on:
+
+  # Permite executar manualmente pela interface do GitHub
+  workflow_dispatch:
+
+  # Executa quando houver push para a branch main
+  push:
+    branches: [main]
+
+  # Executa quando uma Pull Request for aberta ou atualizada para a main
+  pull_request:
+    branches: [main]
+
+# Evita múltiplas execuções simultâneas para a mesma branch
+concurrency:
+
+  # Cria um grupo baseado na branch atual
+  group: ci-${{ github.ref }}
+
+  # Cancela execuções anteriores que ainda estiverem rodando
+  cancel-in-progress: true
+
+# Início da definição dos jobs
 jobs:
+
+  # Nome do job
   test:
+
+    # Máquina virtual utilizada para executar o job
     runs-on: ubuntu-latest
+
+    # Tempo máximo de execução antes de cancelar automaticamente
+    timeout-minutes: 15
+
+    # Estratégia para executar o mesmo job em diferentes versões do Node
     strategy:
+
+      # Matriz de execução
       matrix:
-        node-version: [18.x, 20.x]
+
+        # Versões do Node que serão testadas
+        node-version: [24.x]
+
+    # Passos executados pelo job
     steps:
+
+      # Faz download do código do repositório
       - uses: actions/checkout@v4
 
-      - name: Use Node.js
+      # Instala e configura a versão do Node especificada na matriz
+      - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
+        with:
+
+          # Utiliza a versão definida na matriz
+          node-version: ${{ matrix.node-version }}
+
+          # Habilita cache da pasta de dependências npm
+          cache: npm
+
+      # Instala as dependências exatamente como estão no package-lock.json
       - name: Install dependencies
         run: npm ci
 
+      # Executa análise estática de código
       - name: Run lint
-        run: |
-          if [ -f package.json ] && npm run | grep -q lint; then
-            npm run lint || true
-          else
-            echo "No lint script defined, skipping"
-          fi
+        run: npm run lint
 
+      # Executa os testes automatizados
       - name: Run tests
         run: npm test
 
+      # Gera relatório de cobertura dos testes
       - name: Run coverage
-        run: |
-          if npm run | grep -q coverage; then
-            npm run coverage || true
-          else
-            echo "No coverage script defined, skipping"
-          fi
+        run: npm run coverage
+
+      # Verifica se a aplicação compila corretamente
+      - name: Build project
+        run: npm run build
+
+      # Publica os arquivos gerados pela cobertura como artefato
+      - name: Upload coverage
+
+        # Action responsável pelo upload de artefatos
+        uses: actions/upload-artifact@v4
+
+        with:
+
+          # Nome que aparecerá para download no GitHub
+          name: coverage-report
+
+          # Pasta que contém o relatório de cobertura
+          path: coverage/
