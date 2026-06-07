@@ -47,7 +47,7 @@ jobs:
       matrix:
 
         # Versões do Node que serão testadas
-        node-version: [24.x]
+        node-version: [22.x]
 
     # Passos executados pelo job
     steps:
