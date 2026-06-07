@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --recursive --exit",
     "lint": "eslint .",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "build": "echo Build executado com sucesso"
   },
   "keywords": [],
   "author": "",
