@@ -1,0 +1,42 @@
+name: Push CI
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: |
+          if [ -f package.json ] && npm run | grep -q lint; then
+            npm run lint || true
+          else
+            echo "No lint script defined, skipping"
+          fi
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run coverage
+        run: |
+          if npm run | grep -q coverage; then
+            npm run coverage || true
+          else
+            echo "No coverage script defined, skipping"
+          fi
