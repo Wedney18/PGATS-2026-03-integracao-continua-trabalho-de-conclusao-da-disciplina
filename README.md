@@ -1,4 +1,4 @@
-﻿# Serviço de Pagamento Bancário
+﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
 ## Sobre o projeto
 
@@ -32,7 +32,9 @@ stats/leaderboard/
 Visualização do relatório:
 
 ```markdown
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+![Linguagens do Repositório](./stats/leaderboard_by_bytes.png)
+![Linguagens do Repositório](./stats/leaderboard_by_repos.png)
+![Linguagens do Repositório](./stats/leaderboard_by_weighted.png)
 ```
 
 > Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
@@ -51,8 +53,9 @@ Visualização do relatório:
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
 │   └── leaderboard/
-│       ├── leaderboard.svg
-│       └── leaderboard.png
+│       ├── leaderboard_by_bytes.png
+        ├── leaderboard_by_repos.png
+        ├── leaderboard_by_weighted.png
 ├── src/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
@@ -235,7 +238,6 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 ### Arquivos Gerados
 
 ```text
-stats/leaderboard/leaderboard.svg
 stats/leaderboard/leaderboard.png
 ```
 
