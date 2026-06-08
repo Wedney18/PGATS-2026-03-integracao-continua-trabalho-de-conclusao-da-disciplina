@@ -4,7 +4,7 @@
 
 Este projeto foi desenvolvido para a disciplina de **Integração Contínua**, com o objetivo de aplicar conceitos de automação de processos utilizando **GitHub Actions**.
 
-A solução implementa diferentes estratégias de execução de pipelines para validação automática do código, garantindo qualidade e confiabilidade através de testes automatizados, análise estática de código e geração de cobertura de testes.
+A solução implementa diferentes estratégias de execução de pipelines para validação automática do código, garantindo qualidade e confiabilidade através de testes automatizados, análise estática de código, geração de cobertura de testes e análise das linguagens utilizadas no repositório.
 
 ---
 
@@ -19,6 +19,28 @@ A solução implementa diferentes estratégias de execução de pipelines para v
 
 ---
 
+## 📈 Análise de Linguagens
+
+O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **Github-Language-Stats**.
+
+Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
+
+```text
+stats/leaderboard/
+```
+
+Visualização do relatório:
+
+```markdown
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+```
+
+> Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
+
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+
+---
+
 ## 📂 Estrutura do Projeto
 
 ```text
@@ -27,7 +49,12 @@ A solução implementa diferentes estratégias de execução de pipelines para v
 │   └── workflows/
 │       ├── 01-manual-exec.yaml
 │       ├── 02-schedule.yaml
-│       └── 03-push.yaml
+│       ├── 03-push.yaml
+│       └── 04-language-analytics.yaml
+├── stats/
+│   └── leaderboard/
+│       ├── leaderboard.svg
+│       └── leaderboard.png
 ├── src/
 ├── test/
 ├── node_modules/
@@ -92,7 +119,7 @@ npm run build
 
 # 🔄 Pipelines GitHub Actions
 
-O projeto possui três workflows responsáveis pela automação das validações do código.
+O projeto possui quatro workflows responsáveis pela automação das validações e análises do código.
 
 ## 1️⃣ Execução Manual
 
@@ -191,12 +218,51 @@ Arquivo:
 
 ---
 
+## 4️⃣ Análise de Linguagens
+
+Arquivo:
+
+```text
+.github/workflows/04-language-analytics.yaml
+```
+
+### Objetivo
+
+Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
+
+### Características
+
+* Execução manual via GitHub Actions.
+* Utilização da Action `StefVuck/Github-Language-Stats`.
+* Geração de ranking de linguagens.
+* Exportação em SVG e PNG.
+* Commit automático dos relatórios gerados.
+
+### Arquivos Gerados
+
+```text
+stats/leaderboard/leaderboard.svg
+stats/leaderboard/leaderboard.png
+```
+
+### Etapas executadas
+
+1. Checkout do código
+2. Coleta das linguagens do GitHub
+3. Geração do relatório visual
+4. Commit automático dos artefatos
+5. Atualização do repositório
+
+---
+
 ## 📊 Boas Práticas Aplicadas
 
 * Uso de GitHub Actions para CI.
 * Versionamento de código com Git.
 * Execução automatizada de testes.
 * Análise estática de código.
+* Cobertura de testes.
+* Análise automática de linguagens.
 * Utilização de matriz de versões do Node.js.
 * Cache de dependências NPM.
 * Controle de concorrência.
@@ -215,6 +281,7 @@ Este projeto tem como finalidade demonstrar:
 * Testes automatizados
 * Cobertura de testes
 * Qualidade de código
+* Análise de métricas do repositório
 * Pipelines YAML
 
 ---
