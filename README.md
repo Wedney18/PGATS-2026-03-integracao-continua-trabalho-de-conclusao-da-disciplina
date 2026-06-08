@@ -32,7 +32,7 @@ stats
 Visualização do relatório:
 
 ```markdown
-[Linguagens do Repositório]
+                                        [Linguagens do Repositório]
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
 
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_repos.png)
@@ -52,7 +52,6 @@ Visualização do relatório:
 ├── src/
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
-│   └── leaderboard/
 │       ├── leaderboard_by_bytes.png
         ├── leaderboard_by_repos.png
         ├── leaderboard_by_weighted.png
@@ -130,7 +129,7 @@ Arquivo:
 
 * Disparo manual através da aba **Actions** do GitHub.
 * Controle de concorrência para evitar múltiplas execuções simultâneas.
-* Execução utilizando Node.js 22.x.
+* Execução utilizando Node.js 18.x, 20.x e 22.x.
 * Timeout máximo de 15 minutos.
 
 ### Etapas executadas
@@ -173,6 +172,7 @@ Executa diariamente às **07:44 UTC** (04:44 no horário de Brasília).
 * Ubuntu Latest
 * Node.js 18.x
 * Node.js 20.x
+* Node.js 22.x
 
 ### Etapas executadas
 
@@ -203,6 +203,7 @@ Arquivo:
 * Ubuntu Latest
 * Node.js 18.x
 * Node.js 20.x
+* Node.js 22.x
 
 ### Etapas executadas
 
