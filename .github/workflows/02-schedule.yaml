@@ -2,9 +2,9 @@ name: Schedule
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
   schedule:
     # Executa diariamente às 07:44 UTC (04:44 no Horário de Brasília)
     - cron: '44 7 * * *'

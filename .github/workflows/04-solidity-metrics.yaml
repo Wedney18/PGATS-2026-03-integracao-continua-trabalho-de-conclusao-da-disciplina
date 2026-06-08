@@ -1,0 +1,32 @@
+name: Métricas e relatórios do Solidity
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixa o código do repositório para o runner da pipeline
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Executa a análise de métricas nos arquivos Solidity
+      - name: Generate Solidity Metrics Report
+        uses: tintinweb/solidity-metrics-action@v1
+        id: metrics
+        with:
+          # Define o caminho dos seus arquivos .sol (padrão busca recursivamente)
+          target: '{,**/}*.sol'
+
+      # 3. Faz o upload do arquivo HTML gerado para os artefatos do GitHub
+      - name: Upload Metrics Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: solidity-metrics-report
+          path: ${{ steps.metrics.outputs.report }} # Usa o output dinâmico da etapa anterior
+          if-no-files-found: error
