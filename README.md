@@ -1,36 +1,33 @@
 ﻿# Serviço de Pagamento Bancário
 
-## 📖 Sobre o projeto
+## Sobre o projeto
 
-Este repositório contém um serviço simples de pagamentos bancários em Node.js, com testes automatizados usando **Mocha** e lint com **ESLint**.
+Este repositório contém um serviço simples de pagamentos bancários em Node.js.
 
-O código implementa um serviço capaz de:
+A implementação inclui:
 
-* registrar um pagamento com código de barras, nome da empresa e valor
-* classificar o pagamento como `padrão` ou `cara` conforme o valor
-* consultar o último pagamento registrado
+- registro de pagamentos com código de barras, empresa e valor
+- classificação de pagamentos em `padrão` ou `cara` quando o valor é maior que 100
+- consulta do último pagamento registrado
+- testes automatizados com Mocha
 
----
+## Tecnologias usadas
 
-## 🚀 Tecnologias usadas
+- Node.js
+- JavaScript (ES Modules)
+- Mocha
+- ESLint
+- NYC
 
-* Node.js
-* JavaScript (ES Modules)
-* Mocha
-* ESLint
-* NYC (Istanbul)
-
----
-
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 .
 ├── .github/
-│   └── workflows/  # arquivos de CI do GitHub Actions
+│   └── workflows/
 ├── src/
 │   └── ServicoDePagamentoBancario.js
-├── stats/          # relatórios gerados por workflows
+├── stats/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
 ├── eslint.config.js
@@ -40,9 +37,7 @@ O código implementa um serviço capaz de:
 └── README.md
 ```
 
----
-
-## ⚙️ Instalação
+## Instalação
 
 Clone o repositório:
 
@@ -50,7 +45,7 @@ Clone o repositório:
 git clone https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina.git
 ```
 
-Entre na pasta do projeto:
+Acesse a pasta do projeto:
 
 ```bash
 cd ci-trabalho-de-conclusao-da-disciplina
@@ -62,11 +57,9 @@ Instale as dependências:
 npm install
 ```
 
----
+## Uso
 
-## ▶️ Como usar
-
-### Executar os testes
+### Executar testes
 
 ```bash
 npm test
@@ -84,46 +77,18 @@ npm run lint
 npm run coverage
 ```
 
-### Executar build (script de exemplo)
+### Executar build
 
 ```bash
 npm run build
 ```
 
----
+## Arquivos principais
 
-## 🧪 O que o código faz
+- `src/ServicoDePagamentoBancario.js`: classe que registra e consulta pagamentos
+- `test/ServicoDePagamentoBancario.test.js`: testes que verificam os comportamentos do serviço
 
-### `src/ServicoDePagamentoBancario.js`
+## Observações
 
-* `pagar(codigoBarras, empresa, valor)`
-  * registra um pagamento
-  * define a categoria como `cara` quando o valor é maior que 100
-  * retorna `Pagamento realizado com sucesso.`
-
-* `consultarUltimoPagamento()`
-  * retorna o último pagamento registrado
-  * retorna `Nenhum pagamento efetuado.` quando não há pagamentos
-
-### `test/ServicoDePagamentoBancario.test.js`
-
-* valida pagamento com valor menor que 100
-* valida pagamento com valor maior que 100
-* valida consulta quando não há pagamentos
-* valida consulta do último pagamento registrado
-
----
-
-## 📦 Scripts disponíveis
-
-* `npm test` — executa os testes com Mocha
-* `npm run lint` — executa o ESLint no projeto
-* `npm run coverage` — executa os testes com NYC para gerar cobertura
-* `npm run build` — executa um comando de build de exemplo
-
----
-
-## 📌 Observações
-
-* O projeto usa `type": "module"` no `package.json`, então os arquivos JavaScript são tratados como ES Modules.
-* O serviço de pagamento e os testes estão prontos para serem estendidos com novas regras de validação ou armazenamento.
+- O projeto está configurado como ES Modules no `package.json`.
+- O script `build` atualmente imprime uma mensagem de exemplo.
