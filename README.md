@@ -42,7 +42,7 @@ Visualização do relatório:
 
 > Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
 
-![Linguagens do Repositório]([./stats/leaderboard/leaderboard.svg](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/tree/main/stats)
+[Linguagens do Repositório]([./stats/leaderboard/leaderboard.svg](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/tree/main/stats)
 
 ---
 
