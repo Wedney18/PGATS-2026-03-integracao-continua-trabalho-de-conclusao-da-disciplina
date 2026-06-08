@@ -7,17 +7,8 @@ permissions:
 
 # Eventos que disparam a execução da pipeline
 on:
-
-  # Permite executar manualmente pela interface do GitHub
+  # Permite executar manualmente apenas pela interface do GitHub
   workflow_dispatch:
-
-  # Executa quando houver push para a branch main
-  push:
-    branches: [main]
-
-  # Executa quando uma Pull Request for aberta ou atualizada para a main
-  pull_request:
-    branches: [main]
 
 # Evita múltiplas execuções simultâneas para a mesma branch
 concurrency:
@@ -25,8 +16,6 @@ concurrency:
   # Cria um grupo baseado na branch atual
   group: ci-${{ github.ref }}
 
-  # Cancela execuções anteriores que ainda estiverem rodando
-  cancel-in-progress: true
 
 # Início da definição dos jobs
 jobs:
