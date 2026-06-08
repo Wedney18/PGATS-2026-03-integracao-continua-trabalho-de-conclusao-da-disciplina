@@ -2,6 +2,9 @@ name: Análise de idiomas no perfil do GitHub
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   update-stats:
