@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  schedule:
+    # Executa diariamente às 07:44 UTC (04:44 no Horário de Brasília)
+    - cron: '44 7 * * *'
 
 jobs:
   test:
