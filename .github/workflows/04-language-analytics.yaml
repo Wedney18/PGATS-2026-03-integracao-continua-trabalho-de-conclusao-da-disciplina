@@ -1,0 +1,15 @@
+name: Análise de idiomas no perfil do GitHub
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: StefVuck/Github-Language-Stats@v1.2.0
+        with:
+          github_token: ${{ secrets.STATS_TOKEN }}
+          visualization_types: "leaderboard"
+          output_path: "stats"
