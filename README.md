@@ -49,6 +49,10 @@ Visualização do relatório:
 .
 ├── .github/
 │   └── workflows/
+│       ├── 01-manual-exec.yaml
+│       ├── 02-schedule.yaml
+│       ├── 03-push.yaml
+│       └── 04-language-analytics.yaml
 ├── src/
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
