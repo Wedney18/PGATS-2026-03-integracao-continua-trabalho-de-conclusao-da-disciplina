@@ -21,7 +21,7 @@ concurrency:
 jobs:
 
   # Nome do job
-  test:
+  e2e-tests:
 
     # Máquina virtual utilizada para executar o job
     runs-on: ubuntu-latest
