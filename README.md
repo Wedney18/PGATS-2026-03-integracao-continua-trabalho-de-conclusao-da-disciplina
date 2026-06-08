@@ -232,7 +232,7 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 * Execução manual via GitHub Actions.
 * Utilização da Action `StefVuck/Github-Language-Stats`.
 * Geração de ranking de linguagens.
-* Exportação em SVG e PNG.
+* Exportação em PNG.
 * Commit automático dos relatórios gerados.
 
 ### Arquivos Gerados
