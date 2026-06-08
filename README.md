@@ -284,7 +284,7 @@ Este projeto tem como finalidade demonstrar:
 
 ---
 
-## 👨‍💻 Autor
+## 👨🏽‍💻 Autor
 
 **Wedney Silva**
 
