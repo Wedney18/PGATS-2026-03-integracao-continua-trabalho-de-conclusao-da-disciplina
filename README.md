@@ -4,22 +4,44 @@
 
 Este repositório contém um serviço simples de pagamentos bancários em Node.js.
 
-A implementação inclui:
+A solução implementa diferentes estratégias de execução de pipelines para validação automática do código, garantindo qualidade e confiabilidade através de testes automatizados, análise estática de código, geração de cobertura de testes e análise das linguagens utilizadas no repositório.
 
-- registro de pagamentos com código de barras, empresa e valor
-- classificação de pagamentos em `padrão` ou `cara` quando o valor é maior que 100
-- consulta do último pagamento registrado
-- testes automatizados com Mocha
+---
 
-## Tecnologias usadas
+## 🚀 Tecnologias Utilizadas
 
-- Node.js
-- JavaScript (ES Modules)
-- Mocha
-- ESLint
-- NYC
+* Node.js
+* JavaScript (ES Modules)
+* GitHub Actions
+* ESLint
+* Mocha
+* NYC (Istanbul Coverage)
 
-## Estrutura do projeto
+---
+
+## 📈 Análise de Linguagens
+
+O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **Github-Language-Stats**.
+
+Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
+
+```text
+stats/leaderboard/
+```
+
+Visualização do relatório:
+
+```markdown
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+```
+
+> Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
+
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+
+---
+
+## 📂 Estrutura do Projeto
 
 ```text
 .
@@ -28,6 +50,10 @@ A implementação inclui:
 ├── src/
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
+│   └── leaderboard/
+│       ├── leaderboard.svg
+│       └── leaderboard.png
+├── src/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
 ├── eslint.config.js
@@ -83,12 +109,185 @@ npm run coverage
 npm run build
 ```
 
-## Arquivos principais
+---
 
-- `src/ServicoDePagamentoBancario.js`: classe que registra e consulta pagamentos
-- `test/ServicoDePagamentoBancario.test.js`: testes que verificam os comportamentos do serviço
+# 🔄 Pipelines GitHub Actions
 
-## Observações
+O projeto possui quatro workflows responsáveis pela automação das validações e análises do código.
 
-- O projeto está configurado como ES Modules no `package.json`.
-- O script `build` atualmente imprime uma mensagem de exemplo.
+## 1️⃣ Execução Manual
+
+Arquivo:
+
+```text
+.github/workflows/01-manual-exec.yaml
+```
+
+### Características
+
+* Disparo manual através da aba **Actions** do GitHub.
+* Controle de concorrência para evitar múltiplas execuções simultâneas.
+* Execução utilizando Node.js 22.x.
+* Timeout máximo de 15 minutos.
+
+### Etapas executadas
+
+1. Checkout do código
+2. Configuração do Node.js
+3. Instalação das dependências
+4. Execução do ESLint
+5. Execução dos testes
+6. Geração da cobertura
+7. Build da aplicação
+8. Publicação do relatório de cobertura como artefato
+
+---
+
+## 2️⃣ Execução Agendada
+
+Arquivo:
+
+```text
+.github/workflows/02-schedule.yaml
+```
+
+### Gatilhos
+
+* Push nas branches `main`
+* Pull Request para `main`
+* Agendamento diário
+
+### Cron configurado
+
+```cron
+44 7 * * *
+```
+
+Executa diariamente às **07:44 UTC** (04:44 no horário de Brasília).
+
+### Ambiente
+
+* Ubuntu Latest
+* Node.js 18.x
+* Node.js 20.x
+
+### Etapas executadas
+
+1. Checkout do código
+2. Configuração do Node.js
+3. Instalação das dependências
+4. Execução do lint (quando disponível)
+5. Execução dos testes
+6. Execução da cobertura (quando disponível)
+
+---
+
+## 3️⃣ Execução por Push
+
+Arquivo:
+
+```text
+.github/workflows/03-push.yaml
+```
+
+### Gatilhos
+
+* Push nas branches `main`
+* Pull Requests para `main`
+
+### Ambiente
+
+* Ubuntu Latest
+* Node.js 18.x
+* Node.js 20.x
+
+### Etapas executadas
+
+1. Checkout do código
+2. Configuração do Node.js
+3. Instalação das dependências
+4. Execução do lint (quando disponível)
+5. Execução dos testes
+6. Execução da cobertura (quando disponível)
+
+---
+
+## 4️⃣ Análise de Linguagens
+
+Arquivo:
+
+```text
+.github/workflows/04-language-analytics.yaml
+```
+
+### Objetivo
+
+Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
+
+### Características
+
+* Execução manual via GitHub Actions.
+* Utilização da Action `StefVuck/Github-Language-Stats`.
+* Geração de ranking de linguagens.
+* Exportação em SVG e PNG.
+* Commit automático dos relatórios gerados.
+
+### Arquivos Gerados
+
+```text
+stats/leaderboard/leaderboard.svg
+stats/leaderboard/leaderboard.png
+```
+
+### Etapas executadas
+
+1. Checkout do código
+2. Coleta das linguagens do GitHub
+3. Geração do relatório visual
+4. Commit automático dos artefatos
+5. Atualização do repositório
+
+---
+
+## 📊 Boas Práticas Aplicadas
+
+* Uso de GitHub Actions para CI.
+* Versionamento de código com Git.
+* Execução automatizada de testes.
+* Análise estática de código.
+* Cobertura de testes.
+* Análise automática de linguagens.
+* Utilização de matriz de versões do Node.js.
+* Cache de dependências NPM.
+* Controle de concorrência.
+* Publicação de artefatos.
+* Execução agendada de pipelines.
+
+---
+
+## 🎯 Objetivos de Aprendizagem
+
+Este projeto tem como finalidade demonstrar:
+
+* Conceitos de Integração Contínua (CI)
+* Automação de processos de validação
+* GitHub Actions
+* Testes automatizados
+* Cobertura de testes
+* Qualidade de código
+* Análise de métricas do repositório
+* Pipelines YAML
+
+---
+
+## 👨‍💻 Autor
+
+**Wedney Silva**
+
+Disciplina: Integração Contínua – PGATS 2026/03
+
+---
+
+## 📄 Licença
+
+Projeto desenvolvido exclusivamente para fins acadêmicos.
