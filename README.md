@@ -1,4 +1,4 @@
-﻿# Serviço de Pagamento Bancário
+﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
 ## Sobre o projeto
 
@@ -26,19 +26,21 @@ O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas da
 Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
 
 ```text
-stats/leaderboard/
+stats/
 ```
 
 Visualização do relatório:
 
 ```markdown
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+[Linguagens do Repositório]
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
+
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_repos.png)
+
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_weighted.png)
 ```
 
 > Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
-
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
-
 ---
 
 ## 📂 Estrutura do Projeto
@@ -51,8 +53,9 @@ Visualização do relatório:
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
 │   └── leaderboard/
-│       ├── leaderboard.svg
-│       └── leaderboard.png
+│       ├── leaderboard_by_bytes.png
+        ├── leaderboard_by_repos.png
+        ├── leaderboard_by_weighted.png
 ├── src/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
@@ -235,7 +238,6 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 ### Arquivos Gerados
 
 ```text
-stats/leaderboard/leaderboard.svg
 stats/leaderboard/leaderboard.png
 ```
 
