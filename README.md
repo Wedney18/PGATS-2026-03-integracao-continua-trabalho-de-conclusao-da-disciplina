@@ -32,12 +32,12 @@ stats/leaderboard/
 Visualização do relatório:
 
 ```markdown
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.png)
 ```
 
 > Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
 
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+![Linguagens do Repositório](./stats/leaderboard/leaderboard.png)
 
 ---
 
@@ -53,8 +53,7 @@ Visualização do relatório:
 │       └── 04-language-analytics.yaml
 ├── stats/
 │   └── leaderboard/
-│       ├── leaderboard.svg
-│       └── leaderboard.png
+│       ├── leaderboard.png
 ├── src/
 ├── test/
 ├── node_modules/
