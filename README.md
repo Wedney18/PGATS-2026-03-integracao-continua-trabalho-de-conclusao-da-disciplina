@@ -132,8 +132,8 @@ Arquivo:
 
 ### Gatilhos
 
-* Push nas branches `main` e `master`
-* Pull Request para `main` e `master`
+* Push nas branches `main`
+* Pull Request para `main`
 * Agendamento diário
 
 ### Cron configurado
@@ -171,8 +171,8 @@ Arquivo:
 
 ### Gatilhos
 
-* Push nas branches `main` e `master`
-* Pull Requests para `main` e `master`
+* Push nas branches `main`
+* Pull Requests para `main`
 
 ### Ambiente
 
