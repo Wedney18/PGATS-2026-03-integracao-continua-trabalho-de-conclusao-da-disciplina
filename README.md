@@ -1,7 +1,5 @@
 # PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
-# PGATS 2026-03 - Integração Contínua com GitHub Actions
-
 ## 📖 Sobre o Projeto
 
 Este projeto foi desenvolvido para a disciplina de **Integração Contínua**, com o objetivo de aplicar conceitos de automação de processos utilizando **GitHub Actions**.
