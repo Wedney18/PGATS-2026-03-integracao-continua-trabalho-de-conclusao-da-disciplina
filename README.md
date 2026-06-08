@@ -26,7 +26,7 @@ O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas da
 Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
 
 ```text
-stats/leaderboard/
+stats/
 ```
 
 Visualização do relatório:
