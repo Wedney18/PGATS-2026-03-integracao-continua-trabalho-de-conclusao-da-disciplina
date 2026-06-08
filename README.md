@@ -59,7 +59,6 @@ Visualização do relatório:
 │       ├── leaderboard_by_bytes.png
         ├── leaderboard_by_repos.png
         ├── leaderboard_by_weighted.png
-├── src/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
 ├── eslint.config.js
