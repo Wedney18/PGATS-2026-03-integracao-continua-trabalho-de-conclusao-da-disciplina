@@ -240,7 +240,6 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 ### Arquivos Gerados
 
 ```text
-stats/leaderboard/leaderboard.svg
 stats/leaderboard/leaderboard.png
 ```
 
