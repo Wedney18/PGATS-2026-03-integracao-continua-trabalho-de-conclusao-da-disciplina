@@ -238,7 +238,9 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 ### Arquivos Gerados
 
 ```text
-stats/leaderboard/leaderboard.png
+stats/leaderboard/leaderboard_by_bytes.png
+stats/leaderboard/leaderboard_by_repos.png
+stats/leaderboard/leaderboard_by_weighted.png
 ```
 
 ### Etapas executadas
