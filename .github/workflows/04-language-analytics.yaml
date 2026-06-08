@@ -2,17 +2,30 @@ name: Análise de idiomas no perfil do GitHub
 
 on:
   workflow_dispatch:
-  
+
 permissions:
   contents: write
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: StefVuck/Github-Language-Stats@v1.2.0
         with:
           github_token: ${{ secrets.STATS_TOKEN }}
           visualization_types: "leaderboard"
           output_path: "stats"
+
+      - name: Commit dos relatórios
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add stats/
+
+          git diff --staged --quiet || git commit -m "Atualiza estatísticas de linguagens"
+
+          git push
