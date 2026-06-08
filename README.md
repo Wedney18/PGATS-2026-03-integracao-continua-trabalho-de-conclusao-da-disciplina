@@ -26,7 +26,7 @@ O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas da
 Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
 
 ```text
-stats/
+stats/leaderboard/
 ```
 
 Visualização do relatório:
@@ -232,13 +232,15 @@ Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
 * Execução manual via GitHub Actions.
 * Utilização da Action `StefVuck/Github-Language-Stats`.
 * Geração de ranking de linguagens.
-* Exportação em SVG e PNG.
+* Exportação em PNG.
 * Commit automático dos relatórios gerados.
 
 ### Arquivos Gerados
 
 ```text
-stats/leaderboard/leaderboard.png
+stats/leaderboard/leaderboard_by_bytes.png
+stats/leaderboard/leaderboard_by_repos.png
+stats/leaderboard/leaderboard_by_weighted.png
 ```
 
 ### Etapas executadas
@@ -282,7 +284,7 @@ Este projeto tem como finalidade demonstrar:
 
 ---
 
-## 👨‍💻 Autor
+## 👨🏽‍💻 Autor
 
 **Wedney Silva**
 
