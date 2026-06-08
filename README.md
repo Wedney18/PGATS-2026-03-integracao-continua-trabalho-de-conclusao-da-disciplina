@@ -32,14 +32,17 @@ stats/leaderboard/
 Visualização do relatório:
 
 ```markdown
-![Linguagens do Repositório](./stats/leaderboard_by_bytes.png)
-![Linguagens do Repositório](./stats/leaderboard_by_repos.png)
-![Linguagens do Repositório](./stats/leaderboard_by_weighted.png)
+[Linguagens do Repositório]
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
+
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_repos.png)
+
+(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_weighted.png)
 ```
 
 > Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
 
-![Linguagens do Repositório](./stats/leaderboard/leaderboard.svg)
+![Linguagens do Repositório]([./stats/leaderboard/leaderboard.svg](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/tree/main/stats)
 
 ---
 
