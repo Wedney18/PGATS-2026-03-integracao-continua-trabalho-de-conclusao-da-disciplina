@@ -25,7 +25,6 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 **Entrega**
 
 Enviar:
-
 - URL do repositório GitHub contendo a solução.
 - Evidência de pelo menos uma execução bem-sucedida da pipeline.
 
