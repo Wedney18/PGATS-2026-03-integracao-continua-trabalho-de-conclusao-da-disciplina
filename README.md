@@ -1,5 +1,35 @@
 ﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
+## 🎯Objetivo
+
+Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
+- Execução por push.
+- Execução manual.
+- Execução agendada (schedule).
+- Geração de relatório de testes.
+- Armazenamento/publicação do relatório na pipeline.
+- Criação de um README explicando a solução e os conceitos utilizados.
+
+**Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.**
+
+📝**Requisitos**
+- Trabalho individual.
+- Utilizar GitHub Actions.
+- Pipeline executando com sucesso.
+- Testes automatizados executando com sucesso.
+- Relatório de execução armazenado na pipeline.
+- Aplicação correta dos conceitos estudados.
+- Uso adequado das ferramentas escolhidas.
+- Documentação completa no README.
+
+📦**Entrega**
+
+📤 Enviar:
+- URL do repositório GitHub contendo a solução.
+- Evidência de pelo menos uma execução bem-sucedida da pipeline.
+
+⏳**Prazo: 21/06 às 23h59**
+
 ## Sobre o projeto
 
 Este repositório contém um serviço simples de pagamentos bancários em Node.js.
@@ -32,7 +62,7 @@ stats
 Visualização do relatório:
 
 ```markdown
-                                                         [Linguagens do Repositório]
+                                                        [Linguagens do Repositório]
 
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
 
@@ -166,10 +196,10 @@ Arquivo:
 ### Cron configurado
 
 ```cron
-44 7 * * *
+44 4 * * *
 ```
 
-Executa diariamente às **07:44 UTC** (04:44 no horário de Brasília).
+Executa diariamente às **04:44 UTC**
 
 ### Ambiente
 
