@@ -1,6 +1,6 @@
 ﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
-🎯## Objetivo
+## 🎯Objetivo
 
 Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
 - Execução por push.
