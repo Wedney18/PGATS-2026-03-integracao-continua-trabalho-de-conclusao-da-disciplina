@@ -1,6 +1,6 @@
 ﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 
-## Objetivo
+🎯##Objetivo
 
 Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
 - Execução por push.
@@ -12,7 +12,7 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 **Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.**
 
-**Requisitos**
+📝**Requisitos**
 - Trabalho individual.
 - Utilizar GitHub Actions.
 - Pipeline executando com sucesso.
@@ -22,12 +22,13 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 - Uso adequado das ferramentas escolhidas.
 - Documentação completa no README.
 
-**Entrega**
-Enviar:
+📦**Entrega**
+
+📤 Enviar:
 - URL do repositório GitHub contendo a solução.
 - Evidência de pelo menos uma execução bem-sucedida da pipeline.
 
-**Prazo: 21/06 às 23h59**
+⏳**Prazo: 21/06 às 23h59**
 
 ## Sobre o projeto
 
