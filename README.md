@@ -32,7 +32,8 @@ stats
 Visualização do relatório:
 
 ```markdown
-                                        [Linguagens do Repositório]
+                                                         [Linguagens do Repositório]
+
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
 
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_repos.png)
@@ -49,13 +50,16 @@ Visualização do relatório:
 .
 ├── .github/
 │   └── workflows/
+│       ├── 01-manual.yaml
+│       ├── 02-schedule.yaml
+│       ├── 03-push.yaml
+│       └── 04-language-analytics.yaml
 ├── src/
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
 │       ├── leaderboard_by_bytes.png
         ├── leaderboard_by_repos.png
         ├── leaderboard_by_weighted.png
-├── src/
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
 ├── eslint.config.js
@@ -122,7 +126,7 @@ O projeto possui quatro workflows responsáveis pela automação das validaçõe
 Arquivo:
 
 ```text
-.github/workflows/01-manual-exec.yaml
+.github/workflows/01-manual.yaml
 ```
 
 ### Características
