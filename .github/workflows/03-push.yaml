@@ -1,30 +1,59 @@
+# Nome do workflow exibido na aba Actions do GitHub
 name: Execução por Push
 
+# Eventos que disparam a execução da pipeline
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
+  # Executa sempre que houver um push na branch main
+  push:
+    branches:
+      - main
+
+  # Executa quando um Pull Request for aberto ou atualizado para a branch main
+  pull_request:
+    branches:
+      - main
+
+# Definição dos jobs da pipeline
 jobs:
+
+  # Job responsável por validar a aplicação
   test:
+
+    # Sistema operacional utilizado pelo runner do GitHub Actions
     runs-on: ubuntu-latest
+
+    # Estratégia para executar o mesmo job em múltiplas versões do Node.js
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Use Node.js
+        # Versões do Node.js que serão testadas
+        node-version: [18.x, 20.x, 22.x]
+
+    # Passos executados durante o job
+    steps:
+
+      # Faz checkout do código-fonte do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Configura a versão do Node.js definida na matriz
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
+
+          # Utiliza a versão atual da matriz
           node-version: ${{ matrix.node-version }}
+
+          # Habilita cache das dependências npm para acelerar execuções futuras
           cache: 'npm'
 
-      - name: Install dependencies
+      # Instala as dependências do projeto de forma limpa e reproduzível
+      - name: Instalar dependências
         run: npm ci
 
-      - name: Run lint
+      # Executa o lint apenas se o script existir no package.json
+      - name: Executar lint
         run: |
           if [ -f package.json ] && npm run | grep -q lint; then
             npm run lint || true
@@ -32,10 +61,12 @@ jobs:
             echo "No lint script defined, skipping"
           fi
 
-      - name: Run tests
+      # Executa os testes automatizados
+      - name: Executar testes
         run: npm test
 
-      - name: Run coverage
+      # Executa a cobertura de testes caso o script coverage exista
+      - name: Executar cobertura de testes
         run: |
           if npm run | grep -q coverage; then
             npm run coverage || true

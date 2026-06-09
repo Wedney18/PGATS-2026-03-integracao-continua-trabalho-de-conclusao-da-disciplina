@@ -1,31 +1,65 @@
+# Nome do workflow exibido na aba Actions do GitHub
 name: Análise de idiomas no perfil do GitHub
 
+# Evento que dispara o workflow
 on:
+
+  # Permite executar manualmente pela interface do GitHub Actions
   workflow_dispatch:
 
+# Permissões concedidas ao workflow
 permissions:
+
+  # Permite criar commits e enviar alterações para o repositório
   contents: write
 
+# Definição dos jobs da pipeline
 jobs:
+
+  # Job responsável por gerar as estatísticas de linguagens
   update-stats:
+
+    # Sistema operacional utilizado pelo runner
     runs-on: ubuntu-latest
 
+    # Etapas executadas pelo job
     steps:
-      - uses: actions/checkout@v4
 
-      - uses: StefVuck/Github-Language-Stats@v1.2.0
+      # Faz checkout do código do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Executa a Action responsável por analisar as linguagens do perfil
+      - name: Gerar estatísticas de linguagens
+        uses: StefVuck/Github-Language-Stats@v1.2.0
         with:
+
+          # Token pessoal utilizado para acessar a API do GitHub
+          # Deve estar cadastrado em Settings > Secrets and variables > Actions
           github_token: ${{ secrets.STATS_TOKEN }}
+
+          # Tipo de visualização gerada
+          # "leaderboard" cria um ranking das linguagens utilizadas
           visualization_types: "leaderboard"
+
+          # Diretório onde os relatórios serão salvos
           output_path: "stats"
 
+      # Salva os relatórios gerados no repositório
       - name: Commit dos relatórios
         run: |
+
+          # Configura o usuário que realizará o commit
           git config --global user.name "github-actions[bot]"
+
+          # Configura o e-mail do usuário que realizará o commit
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Adiciona todos os arquivos gerados na pasta stats
           git add stats/
 
+          # Cria um commit apenas se houver alterações
           git diff --staged --quiet || git commit -m "Atualiza estatísticas de linguagens"
 
+          # Envia as alterações para o repositório remoto
           git push
