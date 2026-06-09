@@ -62,7 +62,7 @@ stats
 Visualização do relatório:
 
 ```markdown
-                                                         [Linguagens do Repositório]
+                                             [Linguagens do Repositório]
 
 (https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
 
@@ -196,7 +196,7 @@ Arquivo:
 ### Cron configurado
 
 ```cron
-44 7 * * *
+44 4 * * *
 ```
 
 Executa diariamente às **07:44 UTC** (04:44 no horário de Brasília).
