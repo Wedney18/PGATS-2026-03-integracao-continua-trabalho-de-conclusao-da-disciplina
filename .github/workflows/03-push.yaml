@@ -1,4 +1,4 @@
-name: Push
+name: Execução por Push
 
 on:
   push:
