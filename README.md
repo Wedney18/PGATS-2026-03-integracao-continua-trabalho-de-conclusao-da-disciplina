@@ -50,7 +50,7 @@ Visualização do relatório:
 .
 ├── .github/
 │   └── workflows/
-│       ├── 01-manual-exec.yaml
+│       ├── 01-manual.yaml
 │       ├── 02-schedule.yaml
 │       ├── 03-push.yaml
 │       └── 04-language-analytics.yaml
@@ -126,7 +126,7 @@ O projeto possui quatro workflows responsáveis pela automação das validaçõe
 Arquivo:
 
 ```text
-.github/workflows/01-manual-exec.yaml
+.github/workflows/01-manual.yaml
 ```
 
 ### Características
