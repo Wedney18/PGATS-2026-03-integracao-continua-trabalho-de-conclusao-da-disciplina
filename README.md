@@ -37,7 +37,7 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 ### ⏳ Prazo
 
 **Data Limite:** 21/06/2026 às 23h59
-** Forma de entrega**: Plataforma da disciplina (aula 06)
+**Forma de entrega:** Plataforma da disciplina (aula 06)
 
 ---
 
