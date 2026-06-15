@@ -231,18 +231,19 @@ Ela é executada automaticamente através dos seguintes gatilhos:
 
 ---
 
-# 📊 Estatísticas do Repositório
+## 📊 Estatísticas Geradas
 
-O projeto utiliza workflows para gerar estatísticas automáticas sobre as linguagens utilizadas.
+### Linguagens por Bytes
 
-Os resultados são armazenados na pasta:
+![Leaderboard by Bytes](stats/leaderboard_by_bytes.png)
 
-```text
-stats/
-```
+### Linguagens por Repositório
 
-Essas informações permitem visualizar a distribuição do código-fonte e das tecnologias utilizadas no projeto.
+![Leaderboard by Repositories](stats/leaderboard_by_repos.png)
 
+### Linguagens Ponderadas
+
+![Leaderboard by Weighted](stats/leaderboard_by_weighted.png)
 ---
 
 # 🚀 Execução Manual da Pipeline
