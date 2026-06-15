@@ -128,7 +128,6 @@ jobs:
           # Pasta que contém o relatório de cobertura
           path: coverage/
 
-```yaml
 # Job responsável por gerar estatísticas de linguagens
 language-stats:
 
@@ -190,4 +189,4 @@ language-stats:
 
         # Envia as alterações para o repositório remoto
         git push
-```
+        
