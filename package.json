@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --recursive --exit",
+    "test": "mocha --recursive test --exit --reporter mochawesome --reporter-options reportDir=reports,reportFilename=test-report,html=true,json=true",
     "lint": "eslint .",
     "coverage": "nyc npm test",
     "build": "echo Build executado com sucesso"
@@ -21,6 +21,7 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.4.1",
     "globals": "^17.6.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "mochawesome": "^10.0.0"
   }
 }
