@@ -53,7 +53,7 @@ A solução implementa diferentes estratégias de execução de pipelines para v
 
 O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **Github-Language-Stats**.
 
-Após a execução do workflow `04-language-analytics.yaml`, o relatório fica disponível na pasta:
+Após a execução do workflow `pipeline.yaml`, o relatório fica disponível na pasta:
 
 ```text
 stats
@@ -80,10 +80,7 @@ Visualização do relatório:
 .
 ├── .github/
 │   └── workflows/
-│       ├── 01-manual.yaml
-│       ├── 02-schedule.yaml
-│       ├── 03-push.yaml
-│       └── 04-language-analytics.yaml
+│       ├── pipeline.yaml
 ├── src/
 │   └── ServicoDePagamentoBancario.js
 ├── stats/
@@ -149,57 +146,17 @@ npm run build
 
 # 🔄 Pipelines GitHub Actions
 
-O projeto possui quatro workflows responsáveis pela automação das validações e análises do código.
+O projeto possui um workflow centralizado responsável pela automação das validações, testes, geração de artefatos e análise das linguagens utilizadas no repositório.
 
-## 1️⃣ Execução Manual
+### Arquivo:
 
-Arquivo:
-
-```text
-.github/workflows/01-manual.yaml
-```
-
-### Características
-
-* Disparo manual através da aba **Actions** do GitHub.
-* Controle de concorrência para evitar múltiplas execuções simultâneas.
-* Execução utilizando Node.js 18.x, 20.x e 22.x.
-* Timeout máximo de 15 minutos.
-
-### Etapas executadas
-
-1. Checkout do código
-2. Configuração do Node.js
-3. Instalação das dependências
-4. Execução do ESLint
-5. Execução dos testes
-6. Geração da cobertura
-7. Build da aplicação
-8. Publicação do relatório de cobertura como artefato
-
----
-
-## 2️⃣ Execução Agendada
-
-Arquivo:
-
-```text
-.github/workflows/02-schedule.yaml
-```
+.github/workflows/pipeline.yml
 
 ### Gatilhos
 
 * Push nas branches `main`
-* Pull Request para `main`
-* Agendamento diário
-
-### Cron configurado
-
-```cron
-44 4 * * *
-```
-
-Executa diariamente às **04:44 UTC**
+* Execução agendada (Schedule)
+* Execução manual (Workflow Dispatch)
 
 ### Ambiente
 
@@ -210,6 +167,7 @@ Executa diariamente às **04:44 UTC**
 
 ### Etapas executadas
 
+🧪. Testes e Validação
 1. Checkout do código
 2. Configuração do Node.js
 3. Instalação das dependências
@@ -219,44 +177,12 @@ Executa diariamente às **04:44 UTC**
 
 ---
 
-## 3️⃣ Execução por Push
+## 📊 Estatísticas de Linguagens
+Execução da Action Github-Language-Stats
+Geração dos relatórios visuais
+Commit automático dos arquivos gerados
+Atualização do repositório
 
-Arquivo:
-
-```text
-.github/workflows/03-push.yaml
-```
-
-### Gatilhos
-
-* Push nas branches `main`
-* Pull Requests para `main`
-
-### Ambiente
-
-* Ubuntu Latest
-* Node.js 18.x
-* Node.js 20.x
-* Node.js 22.x
-
-### Etapas executadas
-
-1. Checkout do código
-2. Configuração do Node.js
-3. Instalação das dependências
-4. Execução do lint (quando disponível)
-5. Execução dos testes
-6. Execução da cobertura (quando disponível)
-
----
-
-## 4️⃣ Análise de Linguagens
-
-Arquivo:
-
-```text
-.github/workflows/04-language-analytics.yaml
-```
 
 ### Objetivo
 
