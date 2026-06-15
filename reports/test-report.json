@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-15T19:07:53.363Z",
-    "end": "2026-06-15T19:07:53.376Z",
-    "duration": 13,
+    "start": "2026-06-15T19:12:02.696Z",
+    "end": "2026-06-15T19:12:02.706Z",
+    "duration": 10,
     "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8df732f9-afda-483a-ad76-78b981fc653d",
+      "uuid": "49ef3803-6441-4048-aec7-2ecd1653761d",
       "title": "",
       "fullFile": "C:\\Projetos\\ci-trabalho-de-conclusao-da-disciplina\\test\\ServicoDePagamentoBancario.test.js",
       "file": "\\test\\ServicoDePagamentoBancario.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+          "uuid": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
           "title": "Testes para gestão de pagamentos bancários",
           "fullFile": "C:\\Projetos\\ci-trabalho-de-conclusao-da-disciplina\\test\\ServicoDePagamentoBancario.test.js",
           "file": "\\test\\ServicoDePagamentoBancario.test.js",
@@ -45,8 +45,8 @@
               "context": null,
               "code": "servicoDePagamentoBancario = new ServicoDePagamentoBancario();",
               "err": {},
-              "uuid": "daa53f97-cc2c-4c5f-9738-727acbaad604",
-              "parentUUID": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+              "uuid": "830fca1b-99f8-4874-941c-7ec94f8253ce",
+              "parentUUID": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
               "isHook": true,
               "skipped": false
             }
@@ -66,8 +66,8 @@
               "context": null,
               "code": "// Act (Agir)\nconst resultado = servicoDePagamentoBancario.pagar('0987-7656-9999', 'Minsait', 99.99, 'padrão');\n\n// Assert (Validar ou verificar)\nassert.equal(resultado, 'Pagamento realizado com sucesso.');",
               "err": {},
-              "uuid": "e52e7874-a992-4628-8f30-09b6fe04d7a3",
-              "parentUUID": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+              "uuid": "7fad67a0-5605-4c47-bac6-3b4a8091241c",
+              "parentUUID": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
               "isHook": false,
               "skipped": false
             },
@@ -84,8 +84,8 @@
               "context": null,
               "code": "// Act (Agir)\nconst resultado = servicoDePagamentoBancario.pagar('0988-7656-1001', 'Minsait', 100.01, 'cara');\n\n// Assert (Validar ou verificar)\nassert.equal(resultado, 'Pagamento realizado com sucesso.');",
               "err": {},
-              "uuid": "f6c8a52c-86eb-4bcf-964a-7a8106966612",
-              "parentUUID": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+              "uuid": "1cedcc82-d00b-4566-98ea-4f775b873307",
+              "parentUUID": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
               "isHook": false,
               "skipped": false
             },
@@ -102,8 +102,8 @@
               "context": null,
               "code": "// Act & Assert (Agir e validar ou verificar)\nconst ultimoPagamento = servicoDePagamentoBancario.consultarUltimoPagamento();\nassert.equal(ultimoPagamento, 'Nenhum pagamento efetuado.');",
               "err": {},
-              "uuid": "24144d87-2425-43bb-a3e4-5c19dbf7e219",
-              "parentUUID": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+              "uuid": "f0c324c0-4d54-4fd1-9d1d-3cd387b22b37",
+              "parentUUID": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
               "isHook": false,
               "skipped": false
             },
@@ -120,18 +120,18 @@
               "context": null,
               "code": "// Arrange (Preparar)\nservicoDePagamentoBancario.pagar('0987-7656-9999', 'Minsait', 99.99, 'padrão');\n\n// Act (Agir)\nconst ultimoPagamento = servicoDePagamentoBancario.consultarUltimoPagamento();\n\n// Assert (Agora validando ou verificando que o último pagamento deve retornar)\nassert.equal(ultimoPagamento.codigoBarras, '0987-7656-9999');\nassert.equal(ultimoPagamento.empresa, 'Minsait');\nassert.equal(ultimoPagamento.valor, 99.99);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
               "err": {},
-              "uuid": "6f984308-cf8f-4fea-a3d2-dd97be94f79f",
-              "parentUUID": "9f6722e1-4eda-4438-95b9-90f207ce4279",
+              "uuid": "6a6c0178-15e1-4adc-997f-fefa873fb886",
+              "parentUUID": "d7f52a93-5b04-4b2a-9f04-27004ef31da6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e52e7874-a992-4628-8f30-09b6fe04d7a3",
-            "f6c8a52c-86eb-4bcf-964a-7a8106966612",
-            "24144d87-2425-43bb-a3e4-5c19dbf7e219",
-            "6f984308-cf8f-4fea-a3d2-dd97be94f79f"
+            "7fad67a0-5605-4c47-bac6-3b4a8091241c",
+            "1cedcc82-d00b-4566-98ea-4f775b873307",
+            "f0c324c0-4d54-4fd1-9d1d-3cd387b22b37",
+            "6a6c0178-15e1-4adc-997f-fefa873fb886"
           ],
           "failures": [],
           "pending": [],
