@@ -53,23 +53,42 @@ Conforme solicitado na atividade, a entrega é composta por:
 
 ---
 
-# 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```text
 .
 ├── .github/
 │   └── workflows/
-│       └── pipeline.yaml
+│       └── pipeline.yaml          # Pipeline de Integração Contínua
+│
+├── .nyc_output/                   # Arquivos temporários gerados pelo NYC
+│   └── processinfo/
+│
+├── node_modules/                  # Dependências instaladas pelo NPM
+│
+├── reports/                       # Relatórios gerados pelo Mochawesome
+│   ├── assets/
+│   ├── test-report.html
+│   └── test-report.json
+│
 ├── src/
 │   └── ServicoDePagamentoBancario.js
+│                                 # Código-fonte da aplicação
+│
+├── stats/                         # Estatísticas de linguagens do repositório
+│   ├── leaderboard_by_bytes.png
+│   ├── leaderboard_by_lines.png
+│   └── ...
+│
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
-├── reports/
-├── coverage/
-├── stats/
-├── package.json
-├── package-lock.json
-└── README.md
+│                                 # Testes automatizados
+│
+├── .gitignore                     # Arquivos ignorados pelo Git
+├── eslint.config.js               # Configuração do ESLint
+├── package.json                   # Dependências e scripts do projeto
+├── package-lock.json              # Controle de versões das dependências
+└── README.md                      # Documentação do projeto
 ```
 
 ---
