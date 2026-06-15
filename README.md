@@ -31,13 +31,13 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ### 📤 Enviar:
 
-- **URL do Repositório GitHub contendo a solução.** 
+- **URL do repositório GitHub contendo a solução.** 
 - **Evidência de pelo menos uma execução bem-sucedida da pipeline criada.**
 
 ### ⏳ Prazo
 
 **Data Limite:** 21/06/2026 às 23h59
-** Forma de entrega: Plataforma da disciplina (aula 06)**
+** Forma de entrega**: Plataforma da disciplina (aula 06)
 
 ---
 
