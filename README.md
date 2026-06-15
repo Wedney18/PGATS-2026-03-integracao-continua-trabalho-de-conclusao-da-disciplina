@@ -1,40 +1,56 @@
-﻿# PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
+﻿# PGATS-2026-03-Integração Contínua - Trabalho de Conclusão da Disciplina
 
-## 🎯Objetivo
+## 🎯 Objetivo
 
 Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
-- Execução por push.
-- Execução manual.
-- Execução agendada (schedule).
-- Geração de relatório de testes.
-- Armazenamento/publicação do relatório na pipeline.
-- Criação de um README explicando a solução e os conceitos utilizados.
+
+- ✅ Execução por push
+- ✅ Execução manual
+- ✅ Execução agendada (schedule)
+- ✅ Geração de relatório de testes
+- ✅ Armazenamento/publicação do relatório na pipeline
+- ✅ Criação de um README explicando a solução e os conceitos utilizados
 
 **Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.**
 
-📝**Requisitos**
-- Trabalho individual.
-- Utilizar GitHub Actions.
-- Pipeline executando com sucesso.
-- Testes automatizados executando com sucesso.
-- Relatório de execução armazenado na pipeline.
-- Aplicação correta dos conceitos estudados.
-- Uso adequado das ferramentas escolhidas.
-- Documentação completa no README.
+---
 
-📦**Entrega**
+## 📋 Requisitos
 
-📤 Enviar:
-- URL do repositório GitHub contendo a solução.
-- Evidência de pelo menos uma execução bem-sucedida da pipeline.
+- ✅ **Trabalho individual** - Desenvolvido por Wedney Silva
+- ✅ **Utilizar GitHub Actions** - Implementado com pipeline YAML consolidada
+- ✅ **Pipeline executando com sucesso** - Testado em múltiplas versões do Node.js
+- ✅ **Testes automatizados executando com sucesso** - Mocha com cobertura NYC
+- ✅ **Relatório de execução armazenado na pipeline** - Cobertura publicada em Artifacts
+- ✅ **Aplicação correta dos conceitos estudados** - CI/CD, matriz de versões, cache, concorrência
+- ✅ **Uso adequado das ferramentas escolhidas** - ESLint, Mocha, NYC, GitHub Actions
+- ✅ **Documentação completa no README** - Este arquivo
 
-⏳**Prazo: 21/06 às 23h59**
+---
 
-## Sobre o projeto
+## 📦 Entrega
 
-Este repositório contém um serviço simples de pagamentos bancários em Node.js.
+### 📤 Enviado:
 
-A solução implementa diferentes estratégias de execução de pipelines para validação automática do código, garantindo qualidade e confiabilidade através de testes automatizados, análise estática de código, geração de cobertura de testes e análise das linguagens utilizadas no repositório.
+- **URL do Repositório:** [PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina)
+- **Evidência de Execução:** Disponível na aba [Actions](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions) do repositório
+
+### ⏳ Prazo
+
+**Data Limite:** 21/06/2026 às 23h59
+
+---
+
+## 📋 Sobre o Projeto
+
+Este repositório contém um **serviço de pagamentos bancários** desenvolvido em Node.js com uma **pipeline de integração contínua** completa utilizando GitHub Actions.
+
+A solução implementa estratégias automatizadas de validação de código, garantindo qualidade e confiabilidade através de:
+- ✅ Testes automatizados
+- ✅ Análise estática de código (ESLint)
+- ✅ Cobertura de testes
+- ✅ Análise automática de linguagens
+- ✅ Múltiplas versões do Node.js (18.x, 20.x, 22.x)
 
 ---
 
@@ -51,47 +67,47 @@ A solução implementa diferentes estratégias de execução de pipelines para v
 
 ## 📈 Análise de Linguagens
 
-O projeto utiliza uma pipeline dedicada para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **Github-Language-Stats**.
+O projeto utiliza um **job dedicado** dentro da pipeline para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **StefVuck/Github-Language-Stats**.
 
-Após a execução do workflow `pipeline.yaml`, o relatório fica disponível na pasta:
+### 📊 Relatórios Gerados
 
-```text
-stats
-```
+Após a execução da pipeline, os relatórios ficam disponíveis na pasta `stats/`:
 
-Visualização do relatório:
+| Tipo | Arquivo |
+|------|---------|
+| Ranking por Bytes | `leaderboard_by_bytes.png` |
+| Ranking por Repositórios | `leaderboard_by_repos.png` |
+| Ranking Ponderado | `leaderboard_by_weighted.png` |
 
-```markdown
-                                                        [Linguagens do Repositório]
+### Visualização
 
-(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_bytes.png)
+Os relatórios são automaticamente commitados no repositório após cada execução:
 
-(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_repos.png)
+![Linguagens do Repositório - Bytes](./stats/leaderboard_by_bytes.png)
 
-(https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/blob/main/stats/leaderboard_by_weighted.png)
-```
+![Linguagens do Repositório - Repositórios](./stats/leaderboard_by_repos.png)
 
-> Após a primeira execução com sucesso e o commit automático dos arquivos gerados, a imagem será exibida diretamente neste README.
+![Linguagens do Repositório - Ponderado](./stats/leaderboard_by_weighted.png)
 ---
 
 ## 📂 Estrutura do Projeto
 
-```text
+```
 .
 ├── .github/
 │   └── workflows/
-│       ├── pipeline.yaml
+│       └── pipeline.yaml              # Pipeline consolidada com todos os jobs
 ├── src/
-│   └── ServicoDePagamentoBancario.js
-├── stats/
-│       ├── leaderboard_by_bytes.png
-        ├── leaderboard_by_repos.png
-        ├── leaderboard_by_weighted.png
+│   └── ServicoDePagamentoBancario.js  # Serviço principal de pagamentos
+├── stats/                              # Relatórios de análise de linguagens
+│   ├── leaderboard_by_bytes.png
+│   ├── leaderboard_by_repos.png
+│   └── leaderboard_by_weighted.png
 ├── test/
-│   └── ServicoDePagamentoBancario.test.js
-├── eslint.config.js
-├── package.json
-├── package-lock.json
+│   └── ServicoDePagamentoBancario.test.js  # Testes automatizados
+├── eslint.config.js                   # Configuração do ESLint
+├── package.json                       # Dependências do projeto
+├── package-lock.json                  # Lock file das dependências
 ├── .gitignore
 └── README.md
 ```
@@ -144,104 +160,182 @@ npm run build
 
 ---
 
-# 🔄 Pipelines GitHub Actions
+# 🔄 Pipeline GitHub Actions
 
-O projeto possui um workflow centralizado responsável pela automação das validações, testes, geração de artefatos e análise das linguagens utilizadas no repositório.
+O projeto utiliza uma **pipeline consolidada** (`.github/workflows/pipeline.yaml`) que executa automaticamente em três cenários diferentes, com dois jobs principais:
 
-### Arquivo:
+## 📍 Gatilhos de Execução
 
-.github/workflows/pipeline.yml
+| Evento | Descrição |
+|--------|-----------|
+| 🔄 **Push** | Executada ao fazer push na branch `main` |
+| ⏰ **Schedule** | Executada diariamente às **04:44 UTC** |
+| ▶️ **Manual** | Pode ser disparada manualmente pela aba **Actions** do GitHub |
 
-### Gatilhos
+## ⚙️ Configuração da Pipeline
 
-* Push nas branches `main`
-* Execução agendada (Schedule)
-* Execução manual (Workflow Dispatch)
-
-### Ambiente
-
-* Ubuntu Latest
-* Node.js 18.x
-* Node.js 20.x
-* Node.js 22.x
-
-### Etapas executadas
-
-🧪. Testes e Validação
-1. Checkout do código
-2. Configuração do Node.js
-3. Instalação das dependências
-4. Execução do lint (quando disponível)
-5. Execução dos testes
-6. Execução da cobertura (quando disponível)
+```yaml
+Sistema Operacional: Ubuntu Latest
+Versões do Node.js: 18.x, 20.x, 22.x
+Timeout Máximo: 15 minutos
+Concorrência: Um job por branch (cancel-in-progress: true)
+```
 
 ---
 
-## 📊 Estatísticas de Linguagens
-Execução da Action Github-Language-Stats
-Geração dos relatórios visuais
-Commit automático dos arquivos gerados
-Atualização do repositório
-
+## 📋 Job 1: Testes e Validação
 
 ### Objetivo
+Validar a qualidade do código através de testes, linting e cobertura de testes em múltiplas versões do Node.js.
 
-Gerar automaticamente estatísticas das linguagens utilizadas no repositório.
+### Etapas Executadas
+
+| # | Etapa | Descrição |
+|---|-------|-----------|
+| 1 | **Checkout** | Faz download do código do repositório |
+| 2 | **Setup Node.js** | Configura a versão do Node.js especificada (com cache npm) |
+| 3 | **Instalar Dependências** | Instala dependências exatamente como especificado em `package-lock.json` |
+| 4 | **ESLint** | Executa análise estática de código (se configurado) |
+| 5 | **Testes** | Executa a suite de testes com Mocha |
+| 6 | **Cobertura** | Gera relatório de cobertura com NYC (se configurado) |
+| 7 | **Build** | Compila a aplicação (se configurado) |
+| 8 | **Upload Artefato** | Publica o relatório de cobertura como artefato |
+
+### Saída
+- ✅ Testes executados em 3 versões do Node.js
+- 📊 Relatório de cobertura (disponível em Artifacts)
+
+---
+
+## 📊 Job 2: Estatísticas de Linguagens
+
+### Objetivo
+Gerar automaticamente relatórios visuais das linguagens utilizadas no repositório.
 
 ### Características
 
-* Execução manual via GitHub Actions.
-* Utilização da Action `StefVuck/Github-Language-Stats`.
-* Geração de ranking de linguagens.
-* Exportação em PNG.
-* Commit automático dos relatórios gerados.
+- ✅ Depende da conclusão do Job 1 (`needs: test`)
+- ✅ Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
+- ✅ Gera 3 tipos de rankings (bytes, repositórios, ponderado)
+- ✅ Realiza commit automático dos arquivos gerados
+
+### Etapas Executadas
+
+| # | Etapa | Descrição |
+|---|-------|-----------|
+| 1 | **Checkout** | Faz download do código |
+| 2 | **Gerar Estatísticas** | Analisa linguagens do repositório via GitHub API |
+| 3 | **Aguardar Geração** | Espera 10 segundos para garantir que os arquivos foram gerados |
+| 4 | **Commit Automático** | Configura git e faz commit dos relatórios gerados |
 
 ### Arquivos Gerados
 
-```text
-stats/leaderboard_by_bytes.png
-stats/leaderboard_by_repos.png
-stats/leaderboard_by_weighted.png
+```
+stats/
+├── leaderboard_by_bytes.png       # Ranking por quantidade de bytes
+├── leaderboard_by_repos.png       # Ranking por número de repositórios
+└── leaderboard_by_weighted.png    # Ranking ponderado
 ```
 
-### Etapas executadas
-
-1. Checkout do código
-2. Coleta das linguagens do GitHub
-3. Geração do relatório visual
-4. Commit automático dos artefatos
-5. Atualização do repositório
+### Saída
+- 📈 Relatórios visuais commitados automaticamente na pasta `stats/`
+- 🔄 Atualização automática do repositório remoto
 
 ---
 
 ## 📊 Boas Práticas Aplicadas
 
-* Uso de GitHub Actions para CI.
-* Versionamento de código com Git.
-* Execução automatizada de testes.
-* Análise estática de código.
-* Cobertura de testes.
-* Análise automática de linguagens.
-* Utilização de matriz de versões do Node.js.
-* Cache de dependências NPM.
-* Controle de concorrência.
-* Publicação de artefatos.
-* Execução agendada de pipelines.
+| Prática | Implementação |
+|---------|--------------|
+| 🔄 **CI/CD** | GitHub Actions para automação contínua |
+| 🔀 **Versionamento** | Git com GitHub |
+| 🧪 **Testes Automatizados** | Mocha com assertions |
+| ✅ **Análise Estática** | ESLint para qualidade de código |
+| 📈 **Cobertura de Testes** | NYC (Istanbul) |
+| 📊 **Métricas** | Análise automática de linguagens |
+| 🗂️ **Matriz de Versões** | Testa em múltiplas versões do Node.js |
+| ⚡ **Cache** | NPM cache para acelerar builds |
+| 🔒 **Concorrência** | Evita múltiplas execuções simultâneas |
+| 📦 **Artefatos** | Armazena relatórios de cobertura |
+| ⏰ **Agendamento** | Execução programada de validações |
 
 ---
 
 ## 🎯 Objetivos de Aprendizagem
 
-Este projeto tem como finalidade demonstrar:
+Este projeto demonstra:
 
-* Conceitos de Integração Contínua (CI)
-* Automação de processos de validação
-* GitHub Actions
-* Testes automatizados
-* Cobertura de testes
-* Qualidade de código
-* Análise de métricas do repositório
-* Pipelines YAML
+- ✅ Conceitos fundamentais de **Integração Contínua (CI)**
+- ✅ Automação de processos de validação e deploy
+- ✅ **GitHub Actions** e YAML workflows
+- ✅ Testes automatizados com Mocha
+- ✅ Cobertura de testes com NYC
+- ✅ Análise de qualidade de código
+- ✅ Geração automática de artefatos e relatórios
+- ✅ Boas práticas de CI/CD
+
+---
+
+## 🚀 Como Usar
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina.git
+```
+
+Acesse a pasta do projeto:
+
+```bash
+cd ci-trabalho-de-conclusao-da-disciplina
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+### Executar Localmente
+
+```bash
+# Executar testes
+npm test
+
+# Executar linting
+npm run lint
+
+# Gerar cobertura
+npm run coverage
+
+# Build do projeto
+npm run build
+```
+
+### Disparar Pipeline Manualmente
+
+1. Acesse a aba **Actions** no repositório GitHub
+2. Selecione **Pipeline Completa**
+3. Clique em **Run workflow**
+4. Escolha a branch e clique em **Run workflow**
+
+---
+
+## 📋 Status da Pipeline
+
+Para visualizar o status das execuções, acesse:
+
+```
+https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions
+```
+
+Cada execução pode ser inspecionada para:
+- ✅ Resultados dos testes
+- 📊 Cobertura de testes
+- 📝 Logs detalhados
+- 📦 Artefatos gerados
 
 ---
 
@@ -249,7 +343,9 @@ Este projeto tem como finalidade demonstrar:
 
 **Wedney Silva**
 
-Disciplina: Integração Contínua – PGATS 2026/03
+**Disciplina:** Integração Contínua – PGATS 2026/03
+
+**Instituição:** Pós-graduação em Arquitetura de Testes de Software
 
 ---
 
