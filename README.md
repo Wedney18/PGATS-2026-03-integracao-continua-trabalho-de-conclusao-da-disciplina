@@ -4,12 +4,12 @@
 
 Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
 
-- ✅ Execução por push
-- ✅ Execução manual
-- ✅ Execução agendada (schedule)
-- ✅ Geração de relatório de testes
-- ✅ Armazenamento/publicação do relatório na pipeline
-- ✅ Criação de um README explicando a solução e os conceitos utilizados
+- Execução por push
+- Execução manual
+- Execução agendada (schedule)
+- Geração de relatório de testes
+- Armazenamento/publicação do relatório na pipeline
+- Criação de um README explicando a solução e os conceitos utilizados
 
 **Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.**
 
@@ -17,14 +17,14 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ## 📋 Requisitos
 
-- ✅ **Trabalho individual** - Desenvolvido por Wedney Silva
-- ✅ **Utilizar GitHub Actions** - Implementado com pipeline YAML consolidada
-- ✅ **Pipeline executando com sucesso** - Testado em múltiplas versões do Node.js
-- ✅ **Testes automatizados executando com sucesso** - Mocha com cobertura NYC
-- ✅ **Relatório de execução armazenado na pipeline** - Cobertura publicada em Artifacts
-- ✅ **Aplicação correta dos conceitos estudados** - CI/CD, matriz de versões, cache, concorrência
-- ✅ **Uso adequado das ferramentas escolhidas** - ESLint, Mocha, NYC, GitHub Actions
-- ✅ **Documentação completa no README** - Este arquivo
+- **Trabalho individual** - Desenvolvido por Wedney Silva
+- **Utilizar GitHub Actions** - Implementado com pipeline YAML consolidada
+- **Pipeline executando com sucesso** - Testado em múltiplas versões do Node.js
+- **Testes automatizados executando com sucesso** - Mocha com cobertura NYC
+- **Relatório de execução armazenado na pipeline** - Cobertura publicada em Artifacts
+- **Aplicação correta dos conceitos estudados** - CI/CD, matriz de versões, cache, concorrência
+- **Uso adequado das ferramentas escolhidas** - ESLint, Mocha, NYC, GitHub Actions
+- **Documentação completa no README** - Este arquivo
 
 ---
 
@@ -214,10 +214,10 @@ Gerar automaticamente relatórios visuais das linguagens utilizadas no repositó
 
 ### Características
 
-- ✅ Depende da conclusão do Job 1 (`needs: test`)
-- ✅ Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
-- ✅ Gera 3 tipos de rankings (bytes, repositórios, ponderado)
-- ✅ Realiza commit automático dos arquivos gerados
+- Depende da conclusão do Job 1 (`needs: test`)
+- Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
+- Gera 3 tipos de rankings (bytes, repositórios, ponderado)
+- Realiza commit automático dos arquivos gerados
 
 ### Etapas Executadas
 
@@ -265,14 +265,14 @@ stats/
 
 Este projeto demonstra:
 
-- ✅ Conceitos fundamentais de **Integração Contínua (CI)**
-- ✅ Automação de processos de validação e deploy
-- ✅ **GitHub Actions** e YAML workflows
-- ✅ Testes automatizados com Mocha
-- ✅ Cobertura de testes com NYC
-- ✅ Análise de qualidade de código
-- ✅ Geração automática de artefatos e relatórios
-- ✅ Boas práticas de CI/CD
+- Conceitos fundamentais de **Integração Contínua (CI)**
+- Automação de processos de validação e deploy
+- **GitHub Actions** e YAML workflows
+- Testes automatizados com Mocha
+- Cobertura de testes com NYC
+- Análise de qualidade de código
+- Geração automática de artefatos e relatórios
+- Boas práticas de CI/CD
 
 ---
 
