@@ -1,4 +1,4 @@
-﻿# PGATS-2026-03-Integração Contínua - Trabalho de Conclusão da Disciplina
+﻿# Trabalho de Conclusão da Disciplina
 
 ## 🎯 Objetivo
 
