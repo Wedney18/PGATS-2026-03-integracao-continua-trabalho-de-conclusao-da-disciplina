@@ -50,7 +50,7 @@ A solução implementa estratégias automatizadas de validação de código, gar
 - ✅ Análise estática de código (ESLint)
 - ✅ Cobertura de testes
 - ✅ Análise automática de linguagens
-- ✅ Múltiplas versões do Node.js (18.x, 20.x, 22.x)
+- ✅ Múltiplas versões do Node.js (18.x, 20.x e 22.x)
 
 ---
 
@@ -176,7 +176,7 @@ O projeto utiliza uma **pipeline consolidada** (`.github/workflows/pipeline.yaml
 
 ```yaml
 Sistema Operacional: Ubuntu Latest
-Versões do Node.js: 18.x, 20.x, 22.x
+Versões do Node.js: 18.x, 20.x e 22.x
 Timeout Máximo: 15 minutos
 Concorrência: Um job por branch (cancel-in-progress: true)
 ```
