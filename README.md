@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
+Desenvolver uma pipeline de integração contínua usando GitHub Actions para um projeto com testes automatizados, contemplando:
 
 - Execução por push
 - Execução manual
@@ -18,21 +18,22 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 ## 📋 Requisitos
 
 - **Trabalho individual**
-- **Utilizar GitHub Actions** 
+- **Utilizar GitHub Actions**
 - **Pipeline executando com sucesso**
 - **Testes automatizados executando com sucesso**
 - **Relatório de execução armazenado na pipeline**
-- **Aplicação correta dos conceitos estudados** 
-- **Uso adequado das ferramentas escolhidas** 
+- **Aplicação correta dos conceitos estudados**
+- **Uso adequado das ferramentas escolhidas**
 - **Documentação completa no README**
+
 ---
 
 ## 📦 Entrega
 
 ### 📤 Enviar:
 
-- **URL do repositório GitHub contendo a solução.** 
-- **Evidência de pelo menos uma execução bem-sucedida da pipeline criada.**
+- **URL do repositório GitHub contendo a solução**
+- **Evidência de pelo menos uma execução bem-sucedida da pipeline criada**
 
 ### ⏳ Prazo
 
@@ -43,51 +44,29 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ## 📋 Sobre o Projeto
 
-Este repositório contém um **serviço de pagamentos bancários** desenvolvido em Node.js com uma **pipeline de integração contínua** completa utilizando GitHub Actions.
+Este repositório contém um **serviço de pagamentos bancários** desenvolvido em Node.js com uma **pipeline de integração contínua** usando GitHub Actions.
 
-A solução implementa estratégias automatizadas de validação de código, garantindo qualidade e confiabilidade através de:
-- ✅ Testes automatizados
-- ✅ Análise estática de código (ESLint)
-- ✅ Cobertura de testes
-- ✅ Análise automática de linguagens
-- ✅ Múltiplas versões do Node.js (18.x, 20.x e 22.x)
+A solução implementa validações automatizadas para garantir qualidade e confiabilidade através de:
+
+- ✅ Testes automatizados com Mocha
+- ✅ Relatório de testes com Mochawesome
+- ✅ Análise estática de código com ESLint
+- ✅ Cobertura de testes com NYC
+- ✅ Relatório de linguagens com GitHub Actions
+- ✅ Testes em múltiplas versões do Node.js (18.x, 20.x, 22.x)
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-* Node.js
-* JavaScript (ES Modules)
-* GitHub Actions
-* ESLint
-* Mocha
-* NYC (Istanbul Coverage)
+- Node.js
+- JavaScript (ES Modules)
+- GitHub Actions
+- ESLint
+- Mocha
+- Mochawesome
+- NYC (Istanbul Coverage)
 
----
-
-## 📈 Análise de Linguagens
-
-O projeto utiliza um **job dedicado** dentro da pipeline para gerar estatísticas automáticas das linguagens utilizadas no repositório por meio da Action **StefVuck/Github-Language-Stats**.
-
-### 📊 Relatórios Gerados
-
-Após a execução da pipeline, os relatórios ficam disponíveis na pasta `stats/`:
-
-| Tipo | Arquivo |
-|------|---------|
-| Ranking por Bytes | `leaderboard_by_bytes.png` |
-| Ranking por Repositórios | `leaderboard_by_repos.png` |
-| Ranking Ponderado | `leaderboard_by_weighted.png` |
-
-### Visualização
-
-Os relatórios são automaticamente commitados no repositório após cada execução:
-
-![Linguagens do Repositório - Bytes](./stats/leaderboard_by_bytes.png)
-
-![Linguagens do Repositório - Repositórios](./stats/leaderboard_by_repos.png)
-
-![Linguagens do Repositório - Ponderado](./stats/leaderboard_by_weighted.png)
 ---
 
 ## 📂 Estrutura do Projeto
@@ -97,6 +76,7 @@ Os relatórios são automaticamente commitados no repositório após cada execu�
 ├── .github/
 │   └── workflows/
 │       └── pipeline.yaml              # Pipeline consolidada com todos os jobs
+├── reports/                            # Relatórios Mochawesome gerados pelos testes
 ├── src/
 │   └── ServicoDePagamentoBancario.js  # Serviço principal de pagamentos
 ├── stats/                              # Relatórios de análise de linguagens
@@ -112,7 +92,9 @@ Os relatórios são automaticamente commitados no repositório após cada execu�
 └── README.md
 ```
 
-## Instalação
+---
+
+## 🔧 Instalação
 
 Clone o repositório:
 
@@ -132,7 +114,9 @@ Instale as dependências:
 npm install
 ```
 
-## Uso
+---
+
+## ▶️ Uso
 
 ### Executar testes
 
@@ -160,104 +144,116 @@ npm run build
 
 ---
 
-# 🔄 Pipeline GitHub Actions
+## 📄 Relatórios
 
-O projeto utiliza uma **pipeline consolidada** (`.github/workflows/pipeline.yaml`) que executa automaticamente em três cenários diferentes, com dois jobs principais:
+O teste gera um relatório Mochawesome em `reports/` com saída HTML e JSON.
 
-## 📍 Gatilhos de Execução
+A pipeline também publica os seguintes artefatos:
 
-| Evento | Descrição |
-|--------|-----------|
-| 🔄 **Push** | Executada ao fazer push na branch `main` |
-| ⏰ **Schedule** | Executada diariamente às **04:44 UTC** |
-| ▶️ **Manual** | Pode ser disparada manualmente pela aba **Actions** do GitHub |
-
-## ⚙️ Configuração da Pipeline
-
-```yaml
-Sistema Operacional: Ubuntu Latest
-Versões do Node.js: 18.x, 20.x e 22.x
-Timeout Máximo: 15 minutos
-Concorrência: Um job por branch (cancel-in-progress: true)
-```
+- `coverage/` — relatório de cobertura NYC
+- `reports/` — relatório Mochawesome
 
 ---
 
-## 📋 Job 1: Testes e Validação
+# 🔄 Pipeline GitHub Actions
+
+A pipeline está em `.github/workflows/pipeline.yaml` e é acionada por:
+
+- `push` na branch `main`
+- execução manual via `workflow_dispatch`
+- agendamento diário (`schedule`)
+
+## ⚙️ Configuração
+
+- Sistema operacional: `ubuntu-latest`
+- Versões do Node.js: `18.x`, `20.x`, `22.x`
+- Timeout máximo: `15` minutos
+- Concorrência: `cancel-in-progress: true`
+
+---
+
+## 🧪 Job 1: Testes e Validação
 
 ### Objetivo
-Validar a qualidade do código através de testes, linting e cobertura de testes em múltiplas versões do Node.js.
 
-### Etapas Executadas
+Validar a qualidade do código com testes, linting e cobertura.
 
-| # | Etapa | Descrição |
-|---|-------|-----------|
-| 1 | **Checkout** | Faz download do código do repositório |
-| 2 | **Setup Node.js** | Configura a versão do Node.js especificada (com cache npm) |
-| 3 | **Instalar Dependências** | Instala dependências exatamente como especificado em `package-lock.json` |
-| 4 | **ESLint** | Executa análise estática de código (se configurado) |
-| 5 | **Testes** | Executa a suite de testes com Mocha |
-| 6 | **Cobertura** | Gera relatório de cobertura com NYC (se configurado) |
-| 7 | **Build** | Compila a aplicação (se configurado) |
-| 8 | **Upload Artefato** | Publica o relatório de cobertura como artefato |
+### Etapas
+
+1. **Checkout** do repositório
+2. **Configurar Node.js** com a versão da matriz
+3. **Instalar dependências** com `npm ci`
+4. **Executar ESLint**
+5. **Executar testes** com `npm test`
+6. **Upload do relatório Mochawesome**
+7. **Executar cobertura** com `npm run coverage`
+8. **Upload do artefato de cobertura**
 
 ### Saída
-- ✅ Testes executados em 3 versões do Node.js
-- 📊 Relatório de cobertura (disponível em Artifacts)
+
+- ✅ Relatório Mochawesome gerado em `reports/`
+- ✅ Relatório de cobertura gerado em `coverage/`
+- ✅ Ambiente testado em 3 versões do Node.js
 
 ---
 
 ## 📊 Job 2: Estatísticas de Linguagens
 
 ### Objetivo
-Gerar automaticamente relatórios visuais das linguagens utilizadas no repositório.
+
+Gerar relatórios visuais das linguagens usadas no repositório.
 
 ### Características
 
-- Depende da conclusão do Job 1 (`needs: test`)
-- Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
-- Gera 3 tipos de rankings (bytes, repositórios, ponderado)
-- Realiza commit automático dos arquivos gerados
-
-### Etapas Executadas
-
-| # | Etapa | Descrição |
-|---|-------|-----------|
-| 1 | **Checkout** | Faz download do código |
-| 2 | **Gerar Estatísticas** | Analisa linguagens do repositório via GitHub API |
-| 3 | **Aguardar Geração** | Espera 10 segundos para garantir que os arquivos foram gerados |
-| 4 | **Commit Automático** | Configura git e faz commit dos relatórios gerados |
-
-### Arquivos Gerados
-
-```
-stats/
-├── leaderboard_by_bytes.png       # Ranking por quantidade de bytes
-├── leaderboard_by_repos.png       # Ranking por número de repositórios
-└── leaderboard_by_weighted.png    # Ranking ponderado
-```
+- Depende do job de testes (`needs: test`)
+- Usa `StefVuck/Github-Language-Stats@v1.2.0`
+- Gera rankings por bytes, repositórios e ponderado
+- Commita os resultados automaticamente em `stats/`
 
 ### Saída
-- 📈 Relatórios visuais commitados automaticamente na pasta `stats/`
-- 🔄 Atualização automática do repositório remoto
+
+- `stats/leaderboard_by_bytes.png`
+- `stats/leaderboard_by_repos.png`
+- `stats/leaderboard_by_weighted.png`
 
 ---
 
-## 📊 Boas Práticas Aplicadas
+## ✅ Como reutilizar o README atual
 
-| Prática | Implementação |
-|---------|--------------|
-| 🔄 **CI/CD** | GitHub Actions para automação contínua |
-| 🔀 **Versionamento** | Git com GitHub |
-| 🧪 **Testes Automatizados** | Mocha com assertions |
-| ✅ **Análise Estática** | ESLint para qualidade de código |
-| 📈 **Cobertura de Testes** | NYC (Istanbul) |
-| 📊 **Métricas** | Análise automática de linguagens |
-| 🗂️ **Matriz de Versões** | Testa em múltiplas versões do Node.js |
-| ⚡ **Cache** | NPM cache para acelerar builds |
-| 🔒 **Concorrência** | Evita múltiplas execuções simultâneas |
-| 📦 **Artefatos** | Armazena relatórios de cobertura |
-| ⏰ **Agendamento** | Execução programada de validações |
+Se você quer reaproveitar o conteúdo atual do README, siga estes passos:
+
+1. **Copie o conteúdo** que descreve o projeto e a pipeline.
+2. **Atualize as seções** com os comandos reais do seu projeto:
+   - `npm test`
+   - `npm run lint`
+   - `npm run coverage`
+3. **Inclua o novo relatório Mochawesome** em `reports/`.
+4. **Remova referências antigas** a `test/unit`, `test/e2e` ou a relatórios separados.
+5. **Mantenha a descrição da pipeline** atualizada para refletir o que está em `.github/workflows/pipeline.yaml`.
+
+> Com isso, o README estará alinhado com o estado atual do seu repositório.
+
+---
+
+## 📌 Observações finais
+
+- O relatório de testes agora é gerado pelo `mochawesome` em `reports/`.
+- O relatório de cobertura ainda é gerado pelo `nyc` em `coverage/`.
+- A pipeline publica ambos como artifacts.
+
+---
+
+## 👨🏽‍💻 Autor
+
+Wedney Silva
+
+Disciplina: Integração Contínua – PGATS 2026/03
+
+---
+
+## 📄 Licença
+
+Projeto desenvolvido exclusivamente para fins acadêmicos.
 
 ---
 
