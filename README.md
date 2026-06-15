@@ -77,8 +77,8 @@ Conforme solicitado na atividade, a entrega é composta por:
 │
 ├── stats/                         # Estatísticas de linguagens do repositório
 │   ├── leaderboard_by_bytes.png
-│   ├── leaderboard_by_lines.png
-│   └── ...
+│   ├── leaderboard_by_repos.png
+│   └── leaderboard_by_weighted.png
 │
 ├── test/
 │   └── ServicoDePagamentoBancario.test.js
