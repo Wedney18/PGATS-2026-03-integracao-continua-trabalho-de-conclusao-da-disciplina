@@ -22,6 +22,6 @@
     "eslint": "^10.4.1",
     "globals": "^17.6.0",
     "nyc": "^15.1.0",
-    "mochawesome": "^10.0.0"
+    "mochawesome": "^7.1.3"
   }
 }
