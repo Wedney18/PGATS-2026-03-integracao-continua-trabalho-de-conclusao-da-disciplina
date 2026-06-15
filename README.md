@@ -270,8 +270,7 @@ Nela é possível visualizar:
 
 * Integração Contínua (CI);
 * Automação de Processos;
-* Git e GitHub;
-* GitHub Actions;
+* Git, GitHub e GitHub Actions;
 * Testes Automatizados;
 * Cobertura de Testes;
 * Qualidade de Código;
