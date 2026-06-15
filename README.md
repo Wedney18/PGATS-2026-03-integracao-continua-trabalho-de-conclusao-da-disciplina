@@ -54,37 +54,36 @@ Conforme solicitado na atividade, a entrega é composta por:
 ---
 
 ## 📂 Estrutura do Projeto
+
+```text
 .
 ├── .github/
 │   └── workflows/
-│       └── pipeline.yaml          # Pipeline de Integração Contínua
+│       └── pipeline.yaml                 # Pipeline de Integração Contínua
 │
-├── coverage/                      # Relatórios de cobertura gerados pelo NYC
+├── coverage/                             # Relatórios de cobertura gerados pelo NYC
 │
-├── reports/                       # Relatórios gerados pelo Mochawesome
+├── reports/                              # Relatórios gerados pelo Mochawesome
 │   ├── assets/
 │   ├── test-report.html
 │   └── test-report.json
 │
 ├── src/
-│   └── ServicoDePagamentoBancario.js
-│                                 # Código-fonte da aplicação
+│   └── ServicoDePagamentoBancario.js     # Código-fonte da aplicação
 │
-├── stats/                         # Estatísticas de linguagens do repositório
+├── stats/                                # Estatísticas de linguagens do repositório
 │   ├── leaderboard_by_bytes.png
 │   ├── leaderboard_by_repos.png
 │   └── leaderboard_by_weighted.png
 │
 ├── test/
-│   └── ServicoDePagamentoBancario.test.js
-│                                 # Testes automatizados
+│   └── ServicoDePagamentoBancario.test.js # Testes automatizados
 │
-├── .gitignore                     # Arquivos ignorados pelo Git
-├── eslint.config.js               # Configuração do ESLint
-├── package.json                   # Dependências e scripts do projeto
-├── package-lock.json              # Controle de versões das dependências
-└── README.md                      # Documentação do projeto
-
+├── .gitignore                            # Arquivos ignorados pelo Git
+├── eslint.config.js                      # Configuração do ESLint
+├── package.json                          # Dependências e scripts do projeto
+├── package-lock.json                     # Controle de versões das depend
+```
 ---
 
 # ⚙️ Instalação
