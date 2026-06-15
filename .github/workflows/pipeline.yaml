@@ -1,66 +1,34 @@
-# Nome que aparecerá na aba Actions do GitHub
 name: Pipeline Completa
 
-# Permissões utilizadas pelos jobs da pipeline
 permissions:
-
-  # Permite leitura e escrita no repositório
   contents: write
 
-# Eventos que disparam a execução da pipeline
 on:
-
-  # Executa quando houver push na branch main
   push:
     branches:
       - main
 
-  # Executa automaticamente em horários definidos
   schedule:
-
-    # Executa diariamente às 04:44 UTC
     - cron: '44 4 * * *'
 
-  # Permite executar manualmente pela interface do GitHub
   workflow_dispatch:
 
-# Evita múltiplas execuções simultâneas para a mesma branch
 concurrency:
-
-  # Cria um grupo baseado na branch atual
   group: ci-${{ github.ref }}
-
-  # Cancela execuções anteriores ainda em andamento
   cancel-in-progress: true
 
-# Início da definição dos jobs
 jobs:
 
-  # Job responsável por validar a aplicação
   test:
-
-    # Nome exibido na execução
     name: Testes Node.js
-
-    # Máquina virtual utilizada para executar o job
     runs-on: ubuntu-latest
-
-    # Tempo máximo de execução antes de cancelar automaticamente
     timeout-minutes: 15
 
-    # Estratégia para executar o mesmo job em diferentes versões do Node.js
     strategy:
-
-      # Matriz de execução
       matrix:
-
-        # Versões do Node.js que serão testadas
         node-version: [18.x, 20.x, 22.x]
 
-    # Passos executados pelo job
     steps:
-
-      # Faz download do código do repositório
       - name: Checkout do código
         uses: actions/checkout@v4
 
@@ -189,4 +157,3 @@ language-stats:
 
         # Envia as alterações para o repositório remoto
         git push
-        
