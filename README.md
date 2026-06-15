@@ -59,38 +59,31 @@ Conforme solicitado na atividade, a entrega é composta por:
 .
 ├── .github/
 │   └── workflows/
-│       └── pipeline.yaml          # Pipeline de Integração Contínua
+│       └── pipeline.yaml                 # Pipeline de Integração Contínua
 │
-├── .nyc_output/                   # Arquivos temporários gerados pelo NYC
-│   └── processinfo/
+├── coverage/                             # Relatórios de cobertura gerados pelo NYC
 │
-├── node_modules/                  # Dependências instaladas pelo NPM
-│
-├── reports/                       # Relatórios gerados pelo Mochawesome
+├── reports/                              # Relatórios gerados pelo Mochawesome
 │   ├── assets/
 │   ├── test-report.html
 │   └── test-report.json
 │
 ├── src/
-│   └── ServicoDePagamentoBancario.js
-│                                 # Código-fonte da aplicação
+│   └── ServicoDePagamentoBancario.js     # Código-fonte da aplicação
 │
-├── stats/                         # Estatísticas de linguagens do repositório
+├── stats/                                # Estatísticas de linguagens do repositório
 │   ├── leaderboard_by_bytes.png
 │   ├── leaderboard_by_repos.png
 │   └── leaderboard_by_weighted.png
 │
 ├── test/
-│   └── ServicoDePagamentoBancario.test.js
-│                                 # Testes automatizados
+│   └── ServicoDePagamentoBancario.test.js # Testes automatizados
 │
-├── .gitignore                     # Arquivos ignorados pelo Git
-├── eslint.config.js               # Configuração do ESLint
-├── package.json                   # Dependências e scripts do projeto
-├── package-lock.json              # Controle de versões das dependências
-└── README.md                      # Documentação do projeto
+├── .gitignore                            # Arquivos ignorados pelo Git
+├── eslint.config.js                      # Configuração do ESLint
+├── package.json                          # Dependências e scripts do projeto
+├── package-lock.json                     # Controle de versões das depend
 ```
-
 ---
 
 # ⚙️ Instalação
@@ -231,18 +224,19 @@ Ela é executada automaticamente através dos seguintes gatilhos:
 
 ---
 
-# 📊 Estatísticas do Repositório
+## 📊 Estatísticas Geradas
 
-O projeto utiliza workflows para gerar estatísticas automáticas sobre as linguagens utilizadas.
+### Linguagens por Bytes
 
-Os resultados são armazenados na pasta:
+![Leaderboard by Bytes](stats/leaderboard_by_bytes.png)
 
-```text
-stats/
-```
+### Linguagens por Repositório
 
-Essas informações permitem visualizar a distribuição do código-fonte e das tecnologias utilizadas no projeto.
+![Leaderboard by Repositories](stats/leaderboard_by_repos.png)
 
+### Linguagens Ponderadas
+
+![Leaderboard by Weighted](stats/leaderboard_by_weighted.png)
 ---
 
 # 🚀 Execução Manual da Pipeline
@@ -276,8 +270,7 @@ Nela é possível visualizar:
 
 * Integração Contínua (CI);
 * Automação de Processos;
-* Git e GitHub;
-* GitHub Actions;
+* Git, GitHub e GitHub Actions;
 * Testes Automatizados;
 * Cobertura de Testes;
 * Qualidade de Código;
