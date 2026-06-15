@@ -1,151 +1,280 @@
-﻿# Trabalho de Conclusão da Disciplina - Pipeline CI/CD com GitHub Actions
+﻿# 🚀 Trabalho de Conclusão da Disciplina – Integração Contínua com GitHub Actions
 
-## Objetivo
+# 🎯 Objetivo
 
-Demonstrar uma pipeline de CI/CD com GitHub Actions para um projeto Node.js com testes automatizados e relatório de testes.
+Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
 
-## O que está no projeto
+* Execução por push;
+* Execução manual;
+* Execução agendada (schedule);
+* Geração de relatório de testes;
+* Armazenamento/publicação do relatório na pipeline;
+* Criação de documentação explicando a solução e os conceitos utilizados.
 
-- Serviço de pagamento em `src/`
-- Testes em `test/`
-- Relatório de testes gerado pelo `mochawesome` em `reports/`
-- Cobertura de testes gerada pelo `nyc` em `coverage/`
-- Pipeline GitHub Actions em `.github/workflows/pipeline.yaml`
-- Estatísticas de linguagem em `stats/`
+Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.
+---
 
-## Como usar
+# 📋 Requisitos
 
-```bash
-npm install
-npm test
-npm run lint
-npm run coverage
-```
+* Trabalho individual;
+* Utilização do GitHub Actions;
+* Pipeline executando com sucesso;
+* Testes automatizados executando com sucesso;
+* Relatórios gerados e armazenados na pipeline;
+* Aplicação dos conceitos de Integração Contínua;
+* Uso adequado das ferramentas propostas;
+* Documentação completa através deste README.
 
-## Pipeline
+---
 
-A workflow roda em:
+# 📦 Entrega
 
-- push na branch `main`
-- execução manual (workflow_dispatch)
-- schedule diário
+Conforme solicitado na atividade, a entrega é composta por:
 
-### O que ela faz
+* URL do repositório GitHub contendo a solução implementada;
+* Evidência de pelo menos uma execução bem-sucedida da pipeline.
 
-- instala dependências
-- executa ESLint
-- executa testes com Mochawesome
-- publica o relatório em `reports/`
-- gera cobertura com NYC
-- publica a cobertura como artifact
-- gera relatórios de linguagem e salva em `stats/`
+**Prazo de entrega:** 21/06 às 23h59.
 
-## Estrutura principal
+---
 
-```
+# 🛠️ Tecnologias Utilizadas
+
+* Node.js
+* JavaScript (ES Modules)
+* Git
+* GitHub
+* GitHub Actions
+* Mocha
+* Chai
+* ESLint
+* Mochawesome
+* NYC
+
+---
+
+# 📂 Estrutura do Projeto
+
+```text
 .
-├── .github/workflows/pipeline.yaml
-├── src/ServicoDePagamentoBancario.js
-├── test/ServicoDePagamentoBancario.test.js
+├── .github/
+│   └── workflows/
+│       └── pipeline.yaml
+├── src/
+│   └── ServicoDePagamentoBancario.js
+├── test/
+│   └── ServicoDePagamentoBancario.test.js
 ├── reports/
 ├── coverage/
 ├── stats/
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
-## Nota
-
-O README foi simplificado para refletir o fluxo real do projeto, mantendo apenas as informações essenciais.
-
 ---
 
-## 🎯 Objetivos de Aprendizagem
+# ⚙️ Instalação
 
-Este projeto demonstra:
-
-- Conceitos fundamentais de **Integração Contínua (CI)**
-- Automação de processos de validação e deploy
-- **GitHub Actions** e YAML workflows
-- Testes automatizados com Mocha
-- Cobertura de testes com NYC
-- Análise de qualidade de código
-- Geração automática de artefatos e relatórios
-- Boas práticas de CI/CD
-
----
-
-## 🚀 Como Usar
-
-### Instalação
-
-Clone o repositório:
+## Clonar o Repositório
 
 ```bash
 git clone https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina.git
 ```
 
-Acesse a pasta do projeto:
+## Acessar o Projeto
 
 ```bash
-cd ci-trabalho-de-conclusao-da-disciplina
+cd PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina
 ```
 
-Instale as dependências:
+## Instalar Dependências
 
 ```bash
 npm install
 ```
 
-### Executar Localmente
+---
+
+# ▶️ Execução Local
+
+## Executar Testes
 
 ```bash
-# Executar testes
 npm test
+```
 
-# Executar linting
+## Executar Análise Estática
+
+```bash
 npm run lint
+```
 
-# Gerar cobertura
+## Gerar Cobertura de Testes
+
+```bash
 npm run coverage
+```
 
-# Build do projeto
+## Executar Build
+
+```bash
 npm run build
 ```
 
-### Disparar Pipeline Manualmente
+---
 
-1. Acesse a aba **Actions** no repositório GitHub
-2. Selecione **Pipeline Completa**
-3. Clique em **Run workflow**
-4. Escolha a branch e clique em **Run workflow**
+# 🧪 Testes Automatizados
+
+Os testes automatizados foram implementados utilizando Mocha e Chai.
+
+Os cenários de teste garantem a validação das regras de negócio da aplicação, permitindo identificar falhas automaticamente antes da publicação de alterações.
+
+A execução dos testes ocorre:
+
+* Localmente pelo desenvolvedor;
+* Automaticamente pela pipeline do GitHub Actions.
 
 ---
 
-## 📋 Status da Pipeline
+# 📊 Relatórios de Testes
 
-Para visualizar o status das execuções, acesse:
+O projeto utiliza o Mochawesome para geração de relatórios detalhados dos testes executados.
 
+Após a execução:
+
+```bash
+npm test
 ```
-https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions
+
+os relatórios são gerados na pasta:
+
+```text
+reports/
 ```
 
-Cada execução pode ser inspecionada para:
-- ✅ Resultados dos testes
-- 📊 Cobertura de testes
-- 📝 Logs detalhados
-- 📦 Artefatos gerados
+Os relatórios apresentam:
+
+* Quantidade de testes executados;
+* Testes aprovados;
+* Testes reprovados;
+* Tempo de execução;
+* Detalhamento dos cenários executados.
 
 ---
 
-## 👨🏽‍💻 Autor
+# 📈 Cobertura de Testes
 
-**Wedney Silva**
+A cobertura é gerada utilizando NYC.
+
+Para gerar a cobertura:
+
+```bash
+npm run coverage
+```
+
+Os relatórios são armazenados em:
+
+```text
+coverage/
+```
+
+Esses relatórios permitem avaliar:
+
+* Linhas cobertas pelos testes;
+* Funções exercitadas;
+* Trechos não testados;
+* Percentual geral de cobertura.
+
+---
+
+# 🔄 Pipeline de Integração Contínua
+
+A pipeline foi implementada utilizando GitHub Actions.
+
+Ela é executada automaticamente através dos seguintes gatilhos:
+
+* Push na branch `main`;
+* Execução manual (`workflow_dispatch`);
+* Execução agendada (`schedule`).
+
+## Fluxo da Pipeline
+
+1. Checkout do código-fonte;
+2. Configuração do ambiente Node.js;
+3. Instalação das dependências;
+4. Execução do ESLint;
+5. Execução dos testes automatizados;
+6. Geração do relatório Mochawesome;
+7. Geração da cobertura de testes;
+8. Publicação dos artefatos gerados;
+9. Atualização das estatísticas do repositório.
+
+---
+
+# 📊 Estatísticas do Repositório
+
+O projeto utiliza workflows para gerar estatísticas automáticas sobre as linguagens utilizadas.
+
+Os resultados são armazenados na pasta:
+
+```text
+stats/
+```
+
+Essas informações permitem visualizar a distribuição do código-fonte e das tecnologias utilizadas no projeto.
+
+---
+
+# 🚀 Execução Manual da Pipeline
+
+Para executar a pipeline manualmente:
+
+1. Acesse a aba **Actions** do GitHub;
+2. Selecione a workflow da pipeline;
+3. Clique em **Run workflow**;
+4. Escolha a branch desejada;
+5. Clique novamente em **Run workflow**.
+
+---
+
+# 📋 Monitoramento das Execuções
+
+As execuções podem ser acompanhadas através da aba **Actions** do GitHub.
+
+Nela é possível visualizar:
+
+* Status da execução;
+* Logs detalhados;
+* Resultados dos testes;
+* Cobertura de testes;
+* Artefatos publicados;
+* Histórico de execuções.
+
+---
+
+# 📚 Conceitos Aplicados
+
+* Integração Contínua (CI);
+* Automação de Processos;
+* Git e GitHub;
+* GitHub Actions;
+* Testes Automatizados;
+* Cobertura de Testes;
+* Qualidade de Código;
+* Pipelines CI/CD;
+* Boas Práticas de Desenvolvimento.
+
+---
+
+# 👨🏽‍💻 Autor
+
+**Wedney Santos Silva**
 
 **Disciplina:** Integração Contínua – PGATS 2026/03
 
 ---
 
-## 📄 Licença
+# 📄 Licença
 
 Projeto desenvolvido exclusivamente para fins acadêmicos.

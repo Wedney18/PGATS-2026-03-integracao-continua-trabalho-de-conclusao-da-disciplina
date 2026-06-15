@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-15T17:05:58.663Z",
+    "end": "2026-06-15T17:05:58.680Z",
+    "duration": 17,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "99263fce-1447-40af-ac91-649819c5bf1f",
+      "title": "",
+      "fullFile": "C:\\Projetos\\ci-trabalho-de-conclusao-da-disciplina\\test\\ServicoDePagamentoBancario.test.js",
+      "file": "\\test\\ServicoDePagamentoBancario.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+          "title": "Testes para gestão de pagamentos bancários",
+          "fullFile": "C:\\Projetos\\ci-trabalho-de-conclusao-da-disciplina\\test\\ServicoDePagamentoBancario.test.js",
+          "file": "\\test\\ServicoDePagamentoBancario.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Testes para gestão de pagamentos bancários\"",
+              "fullTitle": "Testes para gestão de pagamentos bancários \"before each\" hook in \"Testes para gestão de pagamentos bancários\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "servicoDePagamentoBancario = new ServicoDePagamentoBancario();",
+              "err": {},
+              "uuid": "ccba2bd6-0b30-4e7c-a795-5028b934562b",
+              "parentUUID": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validação do método realizar pagamento com valor menor que R$ 100,00 reais",
+              "fullTitle": "Testes para gestão de pagamentos bancários Validação do método realizar pagamento com valor menor que R$ 100,00 reais",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Act (Agir)\nconst resultado = servicoDePagamentoBancario.pagar('0987-7656-9999', 'Minsait', 99.99, 'padrão');\n\n// Assert (Validar ou verificar)\nassert.equal(resultado, 'Pagamento realizado com sucesso.');",
+              "err": {},
+              "uuid": "24758eb8-17af-4cbf-9fe3-a2a9e209659a",
+              "parentUUID": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação do método realizar pagamento com valor maior que R$ 100,00 reais",
+              "fullTitle": "Testes para gestão de pagamentos bancários Validação do método realizar pagamento com valor maior que R$ 100,00 reais",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Act (Agir)\nconst resultado = servicoDePagamentoBancario.pagar('0988-7656-1001', 'Minsait', 100.01, 'cara');\n\n// Assert (Validar ou verificar)\nassert.equal(resultado, 'Pagamento realizado com sucesso.');",
+              "err": {},
+              "uuid": "9ba44f34-cc81-493a-ba0d-ea827150a712",
+              "parentUUID": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação do método consultar último pagamento quando não houver nenhum pagamento feito",
+              "fullTitle": "Testes para gestão de pagamentos bancários Validação do método consultar último pagamento quando não houver nenhum pagamento feito",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Act & Assert (Agir e validar ou verificar)\nconst ultimoPagamento = servicoDePagamentoBancario.consultarUltimoPagamento();\nassert.equal(ultimoPagamento, 'Nenhum pagamento efetuado.');",
+              "err": {},
+              "uuid": "5d80ff17-76b3-4c68-9a9a-85bbc8a83c2d",
+              "parentUUID": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação do método consultar último pagamento quando houver algum pagamento feito",
+              "fullTitle": "Testes para gestão de pagamentos bancários Validação do método consultar último pagamento quando houver algum pagamento feito",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange (Preparar)\nservicoDePagamentoBancario.pagar('0987-7656-9999', 'Minsait', 99.99, 'padrão');\n\n// Act (Agir)\nconst ultimoPagamento = servicoDePagamentoBancario.consultarUltimoPagamento();\n\n// Assert (Agora validando ou verificando que o último pagamento deve retornar)\nassert.equal(ultimoPagamento.codigoBarras, '0987-7656-9999');\nassert.equal(ultimoPagamento.empresa, 'Minsait');\nassert.equal(ultimoPagamento.valor, 99.99);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
+              "err": {},
+              "uuid": "1315952c-7b93-476c-9506-1a1ff15df9ea",
+              "parentUUID": "06cb53a3-f41a-472f-9b41-ac4f128b91d1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "24758eb8-17af-4cbf-9fe3-a2a9e209659a",
+            "9ba44f34-cc81-493a-ba0d-ea827150a712",
+            "5d80ff17-76b3-4c68-9a9a-85bbc8a83c2d",
+            "1315952c-7b93-476c-9506-1a1ff15df9ea"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.6"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "test-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "test-report",
+        "html": "true",
+        "json": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
