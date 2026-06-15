@@ -1,15 +1,15 @@
-﻿# PGATS-2026-03-Integração Contínua - Trabalho de Conclusão da Disciplina
+﻿# Trabalho de Conclusão da Disciplina - Pipeline CI/CD com GitHub Actions
 
 ## 🎯 Objetivo
 
 Desenvolver uma pipeline de integração contínua utilizando GitHub Actions para um projeto com testes automatizados, contemplando:
 
-- ✅ Execução por push
-- ✅ Execução manual
-- ✅ Execução agendada (schedule)
-- ✅ Geração de relatório de testes
-- ✅ Armazenamento/publicação do relatório na pipeline
-- ✅ Criação de um README explicando a solução e os conceitos utilizados
+- Execução por push
+- Execução manual
+- Execução agendada (schedule)
+- Geração de relatório de testes
+- Armazenamento/publicação do relatório na pipeline
+- Criação de um README explicando a solução e os conceitos utilizados
 
 **Preferencialmente utilizar um projeto desenvolvido em outra disciplina da pós-graduação.**
 
@@ -17,27 +17,27 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ## 📋 Requisitos
 
-- ✅ **Trabalho individual** - Desenvolvido por Wedney Silva
-- ✅ **Utilizar GitHub Actions** - Implementado com pipeline YAML consolidada
-- ✅ **Pipeline executando com sucesso** - Testado em múltiplas versões do Node.js
-- ✅ **Testes automatizados executando com sucesso** - Mocha com cobertura NYC
-- ✅ **Relatório de execução armazenado na pipeline** - Cobertura publicada em Artifacts
-- ✅ **Aplicação correta dos conceitos estudados** - CI/CD, matriz de versões, cache, concorrência
-- ✅ **Uso adequado das ferramentas escolhidas** - ESLint, Mocha, NYC, GitHub Actions
-- ✅ **Documentação completa no README** - Este arquivo
-
+- **Trabalho individual**
+- **Utilizar GitHub Actions** 
+- **Pipeline executando com sucesso**
+- **Testes automatizados executando com sucesso**
+- **Relatório de execução armazenado na pipeline**
+- **Aplicação correta dos conceitos estudados** 
+- **Uso adequado das ferramentas escolhidas** 
+- **Documentação completa no README**
 ---
 
 ## 📦 Entrega
 
-### 📤 Enviado:
+### 📤 Enviar:
 
-- **URL do Repositório:** [PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina)
-- **Evidência de Execução:** Disponível na aba [Actions](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions) do repositório
+- **URL do repositório GitHub contendo a solução.** 
+- **Evidência de pelo menos uma execução bem-sucedida da pipeline criada.**
 
 ### ⏳ Prazo
 
-**Data Limite:** 21/06/2026 às 23h59
+- **Data Limite:** 21/06/2026 às 23h59
+- **Forma de entrega:** Plataforma da disciplina (aula 06)
 
 ---
 
@@ -50,7 +50,7 @@ A solução implementa estratégias automatizadas de validação de código, gar
 - ✅ Análise estática de código (ESLint)
 - ✅ Cobertura de testes
 - ✅ Análise automática de linguagens
-- ✅ Múltiplas versões do Node.js (18.x, 20.x, 22.x)
+- ✅ Múltiplas versões do Node.js (18.x, 20.x e 22.x)
 
 ---
 
@@ -176,7 +176,7 @@ O projeto utiliza uma **pipeline consolidada** (`.github/workflows/pipeline.yaml
 
 ```yaml
 Sistema Operacional: Ubuntu Latest
-Versões do Node.js: 18.x, 20.x, 22.x
+Versões do Node.js: 18.x, 20.x e 22.x
 Timeout Máximo: 15 minutos
 Concorrência: Um job por branch (cancel-in-progress: true)
 ```
@@ -214,10 +214,10 @@ Gerar automaticamente relatórios visuais das linguagens utilizadas no repositó
 
 ### Características
 
-- ✅ Depende da conclusão do Job 1 (`needs: test`)
-- ✅ Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
-- ✅ Gera 3 tipos de rankings (bytes, repositórios, ponderado)
-- ✅ Realiza commit automático dos arquivos gerados
+- Depende da conclusão do Job 1 (`needs: test`)
+- Usa a Action `StefVuck/Github-Language-Stats@v1.2.0`
+- Gera 3 tipos de rankings (bytes, repositórios, ponderado)
+- Realiza commit automático dos arquivos gerados
 
 ### Etapas Executadas
 
@@ -265,14 +265,14 @@ stats/
 
 Este projeto demonstra:
 
-- ✅ Conceitos fundamentais de **Integração Contínua (CI)**
-- ✅ Automação de processos de validação e deploy
-- ✅ **GitHub Actions** e YAML workflows
-- ✅ Testes automatizados com Mocha
-- ✅ Cobertura de testes com NYC
-- ✅ Análise de qualidade de código
-- ✅ Geração automática de artefatos e relatórios
-- ✅ Boas práticas de CI/CD
+- Conceitos fundamentais de **Integração Contínua (CI)**
+- Automação de processos de validação e deploy
+- **GitHub Actions** e YAML workflows
+- Testes automatizados com Mocha
+- Cobertura de testes com NYC
+- Análise de qualidade de código
+- Geração automática de artefatos e relatórios
+- Boas práticas de CI/CD
 
 ---
 
@@ -344,8 +344,6 @@ Cada execução pode ser inspecionada para:
 **Wedney Silva**
 
 **Disciplina:** Integração Contínua – PGATS 2026/03
-
-**Instituição:** Pós-graduação em Arquitetura de Testes de Software
 
 ---
 
