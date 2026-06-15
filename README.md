@@ -345,8 +345,6 @@ Cada execução pode ser inspecionada para:
 
 **Disciplina:** Integração Contínua – PGATS 2026/03
 
-**Instituição:** Pós-graduação em Arquitetura de Testes de Software
-
 ---
 
 ## 📄 Licença
