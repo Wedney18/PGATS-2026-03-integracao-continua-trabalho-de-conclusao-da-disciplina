@@ -68,11 +68,13 @@ jobs:
 
       # Instala as dependências exatamente como estão no package-lock.json
       - name: Instalar dependências
+
         # Comando para instalar dependências do npm
         run: npm ci
 
       # Executa análise estática de código (se configurado)
       - name: Executar lint
+
         # Verifica se existe script lint; executa se existir, caso contrário mostra mensagem
         run: |
           # Busca pela palavra "lint" nos scripts do package.json
@@ -86,6 +88,7 @@ jobs:
 
       # Executa os testes automatizados
       - name: Executar testes
+
         # Comando para executar suite de testes
         run: npm test
 
@@ -98,6 +101,8 @@ jobs:
           path: reports/
 
       # Executa a cobertura de testes (se configurado)
+      - name: Executar cobertura de testes
+
         # Verifica se existe script coverage; executa se existir, caso contrário mostra mensagem
         run: |
           # Busca pela palavra "coverage" nos scripts do package.json
@@ -111,6 +116,7 @@ jobs:
 
       # Verifica se a aplicação compila corretamente (se configurado)
       - name: Build do projeto
+
         # Verifica se existe script build; executa se existir, caso contrário mostra mensagem
         run: |
           # Busca pela palavra "build" nos scripts do package.json
@@ -161,8 +167,10 @@ jobs:
 
       # Executa a Action responsável por analisar as linguagens
       - name: Gerar estatísticas de linguagens
+
         # Versão e autor da action
         uses: StefVuck/Github-Language-Stats@v1.2.0
+
         # Parâmetros de entrada
         with:
 
@@ -177,11 +185,13 @@ jobs:
 
       # Aguarda a finalização da geração dos arquivos
       - name: Aguardar geração dos arquivos
+
         # Espera 10 segundos para garantir que os arquivos foram gerados
         run: sleep 10
 
       # Salva os relatórios gerados no repositório
       - name: Commit dos relatórios
+      
         # Script com múltiplos comandos git para commit e push
         run: |
 
