@@ -30,7 +30,7 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ## 📦 Entrega
 
-### 📤 Enviado:
+### 📤 Enviar:
 
 - **URL do Repositório:** [PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina)
 - **Evidência de Execução:** Disponível na aba [Actions](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions) do repositório
