@@ -116,12 +116,6 @@ npm install
 npm test
 ```
 
-## Executar Análise Estática
-
-```bash
-npm run lint
-```
-
 ## Gerar Cobertura de Testes
 
 ```bash
