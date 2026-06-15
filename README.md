@@ -1,4 +1,4 @@
-﻿# Trabalho de Conclusão da Disciplina
+﻿# Trabalho de Conclusão da Disciplina - Pipeline CI/CD com GitHub Actions
 
 ## 🎯 Objetivo
 
