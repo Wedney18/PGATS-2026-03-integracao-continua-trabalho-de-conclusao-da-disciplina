@@ -54,17 +54,12 @@ Conforme solicitado na atividade, a entrega é composta por:
 ---
 
 ## 📂 Estrutura do Projeto
-
-```text
 .
 ├── .github/
 │   └── workflows/
 │       └── pipeline.yaml          # Pipeline de Integração Contínua
 │
-├── .nyc_output/                   # Arquivos temporários gerados pelo NYC
-│   └── processinfo/
-│
-├── node_modules/                  # Dependências instaladas pelo NPM
+├── coverage/                      # Relatórios de cobertura gerados pelo NYC
 │
 ├── reports/                       # Relatórios gerados pelo Mochawesome
 │   ├── assets/
@@ -89,8 +84,6 @@ Conforme solicitado na atividade, a entrega é composta por:
 ├── package.json                   # Dependências e scripts do projeto
 ├── package-lock.json              # Controle de versões das dependências
 └── README.md                      # Documentação do projeto
-```
-
 ---
 
 # ⚙️ Instalação
