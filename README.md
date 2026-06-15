@@ -17,27 +17,27 @@ Desenvolver uma pipeline de integração contínua utilizando GitHub Actions par
 
 ## 📋 Requisitos
 
-- **Trabalho individual** - Desenvolvido por Wedney Silva
-- **Utilizar GitHub Actions** - Implementado com pipeline YAML consolidada
-- **Pipeline executando com sucesso** - Testado em múltiplas versões do Node.js
-- **Testes automatizados executando com sucesso** - Mocha com cobertura NYC
-- **Relatório de execução armazenado na pipeline** - Cobertura publicada em Artifacts
-- **Aplicação correta dos conceitos estudados** - CI/CD, matriz de versões, cache, concorrência
-- **Uso adequado das ferramentas escolhidas** - ESLint, Mocha, NYC, GitHub Actions
-- **Documentação completa no README** - Este arquivo
-
+- **Trabalho individual**
+- **Utilizar GitHub Actions** 
+- **Pipeline executando com sucesso**
+- **Testes automatizados executando com sucesso**
+- **Relatório de execução armazenado na pipeline**
+- **Aplicação correta dos conceitos estudados** 
+- **Uso adequado das ferramentas escolhidas** 
+- **Documentação completa no README**
 ---
 
 ## 📦 Entrega
 
 ### 📤 Enviar:
 
-- **URL do Repositório:** [PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina)
-- **Evidência de Execução:** Disponível na aba [Actions](https://github.com/Wedney18/PGATS-2026-03-integracao-continua-trabalho-de-conclusao-da-disciplina/actions) do repositório
+- **URL do Repositório GitHub contendo a solução.** 
+- **Evidência de pelo menos uma execução bem-sucedida da pipeline criada.**
 
 ### ⏳ Prazo
 
 **Data Limite:** 21/06/2026 às 23h59
+** Forma de entrega: Plataforma da disciplina (aula 06)**
 
 ---
 
