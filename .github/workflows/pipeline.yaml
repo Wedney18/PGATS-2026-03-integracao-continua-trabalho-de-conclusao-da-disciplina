@@ -128,71 +128,66 @@ jobs:
           # Pasta que contém o relatório de cobertura
           path: coverage/
 
-  # Job responsável por gerar estatísticas de linguagens
-  language-stats:
+```yaml
+# Job responsável por gerar estatísticas de linguagens
+language-stats:
 
-    # Nome exibido na execução
-    name: Estatísticas de Linguagens
+  # Nome exibido na execução
+  name: Estatísticas de Linguagens
 
-    # O job será executado independentemente do job test
-    needs: test
+  # Executa somente após o término do job de testes
+  needs: test
 
-    # Sistema operacional utilizado pelo runner
-    runs-on: ubuntu-latest
+  # Sistema operacional utilizado pelo runner
+  runs-on: ubuntu-latest
 
-    # Executa apenas em execução manual ou agendada
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+  # Executa apenas em execução manual ou agendada
+  if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
 
-    # Etapas executadas pelo job
-    steps:
+  # Etapas executadas pelo job
+  steps:
 
-      # Faz checkout do código do repositório
-      - name: Checkout do código
-        uses: actions/checkout@v4
+    # Faz checkout do código do repositório
+    - name: Checkout do código
+      uses: actions/checkout@v4
 
-      # Executa a Action responsável por analisar as linguagens do perfil
-      - name: Gerar estatísticas de linguagens
-        uses: StefVuck/Github-Language-Stats@v1.2.0
+    # Executa a Action responsável por analisar as linguagens do perfil
+    - name: Gerar estatísticas de linguagens
+      uses: StefVuck/Github-Language-Stats@v1.2.0
+      with:
 
-        with:
+        # Token pessoal utilizado para acessar a API do GitHub
+        github_token: ${{ secrets.STATS_TOKEN }}
 
-          # Token pessoal utilizado para acessar a API do GitHub
-          # Deve estar cadastrado em Settings > Secrets and variables > Actions
-          github_token: ${{ secrets.STATS_TOKEN }}
+        # Tipo de visualização gerada
+        visualization_types: "leaderboard"
 
-          # Tipo de visualização gerada
-          # "leaderboard" cria um ranking das linguagens utilizadas
-          visualization_types: "leaderboard"
+        # Diretório onde os relatórios serão salvos
+        output_path: "stats"
 
-          # Diretório onde os relatórios serão salvos
-          output_path: "stats"
+    # Aguarda a finalização da geração dos arquivos
+    - name: Aguardar geração dos arquivos
+      run: sleep 10
 
-      # Salva os relatórios gerados no repositório
-      - name: Commit dos relatórios
-        run: |
+    # Salva os relatórios gerados no repositório
+    - name: Commit dos relatórios
+      run: |
 
-          # Configura o usuário que realizará o commit
-          git config --global user.name "github-actions[bot]"
+        # Configura o usuário que realizará o commit
+        git config --global user.name "github-actions[bot]"
 
-          # Configura o e-mail do usuário que realizará o commit
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        # Configura o e-mail do usuário que realizará o commit
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Ajustar permissões
-          chmod -R u+rw stats
+        # Ajusta permissões dos arquivos gerados
+        chmod -R u+rw stats
 
-          # 
-          git status
+        # Adiciona os arquivos gerados
+        git add stats/
 
-          git reset
+        # Cria um commit apenas se houver alterações
+        git diff --staged --quiet || git commit -m "Atualiza estatísticas de linguagens"
 
-          git add stats/*
-
-          # name: Aguardar geração dos arquivos
-          sleep 10
-
-          # Cria um commit apenas se houver alterações
-          git diff --staged --quiet || git commit -m "Atualiza estatísticas de linguagens"
-
-          # Envia as alterações para o repositório remoto
-          git push
-
+        # Envia as alterações para o repositório remoto
+        git push
+```
