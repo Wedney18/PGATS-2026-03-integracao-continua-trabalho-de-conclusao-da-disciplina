@@ -145,9 +145,6 @@ jobs:
     # Sistema operacional do runner
     runs-on: ubuntu-latest
 
-    # Executa apenas em execução manual ou agendada (nunca no push)
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
-
     # Lista de etapas do job
     steps:
 
