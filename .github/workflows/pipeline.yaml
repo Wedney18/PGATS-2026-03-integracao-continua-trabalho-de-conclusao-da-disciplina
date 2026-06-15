@@ -134,6 +134,9 @@ jobs:
     # Nome exibido na execução
     name: Estatísticas de Linguagens
 
+    # O job será executado independentemente do job test
+    needs: test
+
     # Sistema operacional utilizado pelo runner
     runs-on: ubuntu-latest
 
@@ -174,8 +177,18 @@ jobs:
           # Configura o e-mail do usuário que realizará o commit
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Adiciona todos os arquivos gerados na pasta stats
-          git add stats/
+          # Ajustar permissões
+          chmod -R u+rw stats
+
+          # 
+          git status
+
+          git reset
+
+          git add stats/*
+
+          # name: Aguardar geração dos arquivos
+          sleep 10
 
           # Cria um commit apenas se houver alterações
           git diff --staged --quiet || git commit -m "Atualiza estatísticas de linguagens"
