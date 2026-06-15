@@ -84,6 +84,7 @@ Conforme solicitado na atividade, a entrega é composta por:
 ├── package.json                   # Dependências e scripts do projeto
 ├── package-lock.json              # Controle de versões das dependências
 └── README.md                      # Documentação do projeto
+
 ---
 
 # ⚙️ Instalação
