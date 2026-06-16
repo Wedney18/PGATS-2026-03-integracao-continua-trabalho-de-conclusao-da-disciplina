@@ -275,7 +275,7 @@ Nela é possível visualizar:
 
 # 👨🏽‍💻 Autor
 
-**Wedney Santos Silva**
+**Wedney Silva**
 
 **Disciplina:** Integração Contínua – PGATS 2026/03
 
